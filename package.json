@@ -1,7 +1,7 @@
 {
-  "name": "blk-design-system-react",
-  "version": "1.2.1",
-  "description": "React version of BLK Design System by Creative Tim",
+  "name": "when-to-charge",
+  "version": "1.0.0",
+  "description": "UC Berkeledy MIDS Capstone Project",
   "main": "index.js",
   "author": "Creative Tim",
   "license": "MIT",
@@ -12,7 +12,7 @@
   "bugs": {
     "url": "https://github.com/creativetimofficial/blk-design-system-react/issues"
   },
-  "homepage": "https://demos.creative-tim.com/blk-design-system-react/#/",
+  "homepage": "https://main.d2yazdjiyns2jt.amplifyapp.com/",
   "keywords": [
     "react",
     "reactjs",
