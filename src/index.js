@@ -27,6 +27,7 @@ import Index from "views/Index.js";
 import LandingPage from "views/examples/LandingPage.js";
 import RegisterPage from "views/examples/RegisterPage.js";
 import ProfilePage from "views/examples/ProfilePage.js";
+import WeeklyUpdate3_1 from "views/weekly_updates/WeeklyUpdate3_1.js";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -39,8 +40,8 @@ root.render(
         render={(props) => <LandingPage {...props} />}
       />
       <Route
-        path="/register-page"
-        render={(props) => <RegisterPage {...props} />}
+        path="/update-3-1"
+        render={(props) => <WeeklyUpdate3_1 {...props} />}
       />
       <Route
         path="/profile-page"
