@@ -110,7 +110,7 @@ export default function WeeklyUpdate3_1() {
               <ul>
                 <li>(Kurt - 2 min) LightGBM topline metric update:</li>
                 <ul>
-                  <li>Best smoothing/statistical MAPE: around 14%</li>
+                  <li>Best smoothing/statistical MAPE: 13.56%</li>
                   <li>LightGBM baseline MAPE: 11.03%</li>
                   <li>LightGBM MAPE: 7.53% (3.5 pct points lower than LightBGM baseline)</li>
                 </ul>
@@ -129,6 +129,12 @@ export default function WeeklyUpdate3_1() {
             <img
               src={require("assets/img/weekly_updates/weekly_update_3_1_img2.png")}
             />
+            <img
+              src={require("assets/img/weekly_updates/weekly_update_3_1_img4.png")}
+            />
+            <img
+              src={require("assets/img/weekly_updates/weekly_update_3_1_img3.png")}
+            />
           </Container>
         </div>
         <div className="section">
@@ -143,7 +149,7 @@ export default function WeeklyUpdate3_1() {
                   <li>Tensorboard</li>
                   <li>Optuna for hyperparameter tuning</li>
                 </ul>
-                <li>Continue to run experiments </li>
+                <li>Continue to run experiments with LightGBM and TFT models </li>
                 <li>Drop a lower performing model by end of next week</li>
                 <li>Articulate our “wow factor”</li>
                 <li>Look at pricing data after Mar 15</li>
@@ -160,14 +166,17 @@ export default function WeeklyUpdate3_1() {
             <h4>
               <ul>
                 <li>Green Juice</li>
-                <li>Green Grid Forecast (ChatGPT)</li>
+                <li>Green Grid Forecast</li>
                 <li>WhenToCharge</li>
-                <li>PowerPal (ChatGPT)</li>
+                <li>PowerPal</li>
                 <li>Low CarbCharge</li>
                 <li>ChargeRight</li>
-                <li>WattWise (ChatGPT)</li>
-                <li>CleanCast (ChatGPT)</li>
-                <li>CarbonCharge (ChatGPT)</li>
+                <li>WattWise</li>
+                <li>CleanCAst</li>
+                <li>CarbonCharge</li>
+                <li>CarbonWise</li>
+                <li>Green Gauge</li>
+                <li>Carbon IQ</li>
               </ul>
             </h4>
           </Container>
