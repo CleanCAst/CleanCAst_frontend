@@ -183,7 +183,7 @@ export default function WeeklyUpdate3_1() {
         </div>
         <div className="section">
           <Container>
-            <h2>Testing plotly animations</h1>
+            <h2>Testing plotly animations</h2>
             <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~bronte-baer/3.embed"></iframe>
           </Container>
         </div>
