@@ -89,7 +89,7 @@ export default function WeeklyUpdate3_1() {
             src={require("assets/img/path4.png")}
           />
           <Container className="align-items-center">
-          <Row className="row-grid justify-content-between align-items-center text-left">
+            <Row className="row-grid justify-content-between align-items-center text-left">
               <Col lg="6" md="6">
                 <h1 className="text-white"> Weekly Update </h1>
                 <h3>March 1 </h3>
@@ -104,7 +104,7 @@ export default function WeeklyUpdate3_1() {
         </div>
         <div className="section">
           <Container>
-          <hr className="line-primary" />
+            <hr className="line-primary" />
             <h2>Updates</h2>
             <h4>
               <ul>
@@ -139,7 +139,7 @@ export default function WeeklyUpdate3_1() {
         </div>
         <div className="section">
           <Container>
-          <hr className="line-primary" />
+            <hr className="line-primary" />
             <h2>Up Next</h2>
             <h4>
               <ul>
@@ -161,7 +161,7 @@ export default function WeeklyUpdate3_1() {
         </div>
         <div className="section">
           <Container>
-          <hr className="line-primary" />
+            <hr className="line-primary" />
             <h2>Help us pick a name!</h2>
             <h4>
               <ul>
@@ -179,6 +179,11 @@ export default function WeeklyUpdate3_1() {
                 <li>Carbon IQ</li>
               </ul>
             </h4>
+          </Container>
+        </div>
+        <div className="section">
+          <Container>
+            <h1>Testing placeholder for plotly html</h1>
           </Container>
         </div>
         <Footer />
