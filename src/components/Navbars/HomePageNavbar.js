@@ -79,7 +79,7 @@ export default function IndexNavbar() {
       <Container>
         <div className="navbar-translate">
           <NavbarBrand to="/" tag={Link} id="navbar-brand">
-          WhenToCharge
+          CleanCAst
           </NavbarBrand>
           <button
             aria-expanded={collapseOpen}
@@ -102,7 +102,7 @@ export default function IndexNavbar() {
             <Row>
               <Col className="collapse-brand" xs="6">
                 <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                WhenToCharge
+                CleanCAst
                 </a>
               </Col>
               <Col className="collapse-close text-right" xs="6">
