@@ -89,7 +89,7 @@ export default function WeeklyUpdate3_1() {
             src={require("assets/img/path4.png")}
           />
           <Container className="align-items-center">
-          <Row className="row-grid justify-content-between align-items-center text-left">
+            <Row className="row-grid justify-content-between align-items-center text-left">
               <Col lg="6" md="6">
                 <h1 className="text-white"> Weekly Update </h1>
                 <h3>March 1 </h3>
@@ -104,7 +104,7 @@ export default function WeeklyUpdate3_1() {
         </div>
         <div className="section">
           <Container>
-          <hr className="line-primary" />
+            <hr className="line-primary" />
             <h2>Updates</h2>
             <h4>
               <ul>
@@ -139,7 +139,7 @@ export default function WeeklyUpdate3_1() {
         </div>
         <div className="section">
           <Container>
-          <hr className="line-primary" />
+            <hr className="line-primary" />
             <h2>Up Next</h2>
             <h4>
               <ul>
@@ -161,7 +161,7 @@ export default function WeeklyUpdate3_1() {
         </div>
         <div className="section">
           <Container>
-          <hr className="line-primary" />
+            <hr className="line-primary" />
             <h2>Help us pick a name!</h2>
             <h4>
               <ul>
@@ -179,6 +179,18 @@ export default function WeeklyUpdate3_1() {
                 <li>Carbon IQ</li>
               </ul>
             </h4>
+          </Container>
+        </div>
+        <div className="section">
+          <Container>
+            <h2>Testing plotly animations</h2>
+            <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~bronte-baer/3.embed"></iframe>
+          </Container>
+        </div>
+        <div className="section">
+          <Container>
+            <h2>Testing plotly animations</h2>
+            <iframe width="800" height="600" frameborder="0" scrolling="no" src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Vizzes/energy_type_ng_month.html?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMiJHMEUCIAyVDowh7U8tI5JzCbDshjoKS0PGGUUQ%2FfH%2BFcJZ2hTRAiEA5foRxc%2BQJvb2h0%2F23N2SNGzMKSA%2B8LZ%2B0P34f70gDosqiAMInP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw5NjU2NDY5OTU4NDMiDFHR3TeT17WPz5UsHyrcAjoOtp93FJ3yCMWiHPjgroyb%2BqI6%2FZH7JPcOBKGRZiUqXOpgFh6FB6ae7rYBx1VBHrB%2F3cIBp7yUmMAyS3z7mRIwVTSF8T8bEgEwh%2FncdKmQGmqYXRXz0Z%2FHcqSiUmxT2k%2FVD9AXS4g7TX9T7hMUD4EnZzjWrtDJtq90e6sea6c11p4k4x4COudL863YcKPqzocrSxG7ulTJ6g5%2BQRwVvooqW9QGcp2FpZCEZHFAoasyapj4gKapN3UyfHslTUFzh0aEPNbTDXo8ikpNthVVeC96gnqKg3sNnjqWuBVA%2FgZd7nQybUEGZ9BpjI4ITZnvT1MsHmPVO4gwVTvcfI66rEPKGd1gm8y3pP%2BwZsjZoY42LUjHdr4N3FojX2IRLunz5A65tD57PGhPI%2FQYV8wlxPzUBlc2XgghZQDtIkyjBNgyIeb9aSKxcrG3Rpcl2yqFmpixqwBZmikTV8udozDD%2FbSgBjqzAlf5%2BF8dtcUv9B81eAmHl3DCR4X9qUTJdfaH5DmGIMuaKVCZQYPIURmtAPC3t%2B7ljCklh6Ofze2gvTkrPJOI%2BphAloHZlZt2iuasGUIdbDdel4jtC6AlmWcWO9Rss0pSCGGXfQ71Sec6h36bSaCfSJF2w67ssU1W%2Bkq76m%2BRCwEF7KFd4f5qmEg0vowCgqNdJ4cPDBPnKd2CI40syyQx2MHfC3PnVujVmEcXZa76Fu4pQs4nEF4frGfyxDROG3nMFwtdVLkbUfCWAcCbKrzreq%2BT%2FtBgc28VY2dCBldGvsSDdGUUzqMSD5Rm7tHJKRNWsPCVPxOcpLdm62tbzRPxpfwg2LlukqoaQHyY%2F2gpU59hcHMMYIHg4n8B5lrlfYKrkrEdXxNpdPZLNbQxceKKxg%2FrUwY%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20230312T031929Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIA6BVIL2GBRZYGUPOL%2F20230312%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Signature=e35d298744d7959d0a6fc3694478b63b8bced1d4423e26e66a9fcfb43c8197ca"></iframe>
           </Container>
         </div>
         <Footer />
