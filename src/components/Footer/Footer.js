@@ -35,7 +35,7 @@ export default function Footer() {
       <Container>
         <Row>
           <Col md="3">
-            <h1 className="title">WhenToCharge</h1>
+            <h1 className="title">CleanCAst</h1>
           </Col>
           <Col md="3">
             <Nav>

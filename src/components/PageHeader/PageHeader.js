@@ -26,9 +26,9 @@ export default function PageHeader() {
       
       <Container>
         <div className="content-center brand">
-          <h1 className="h1-seo">WhenToCharge</h1>
+          <h1 className="h1-seo">CleanCAst</h1>
           <h3 className="d-none d-sm-block">
-            Welcome to WhenToCharge!
+            Welcome to CleanCAst!
           </h3>
         </div>
       </Container>

@@ -87,7 +87,7 @@ export default function LandingPage() {
               <Col lg="6" md="6">
                 <h1 className="text-white">
                   Welcome to <br />
-                  <span className="text-white">WhenToCharge</span>
+                  <span className="text-white">CleanCAst</span>
                 </h1>
                 <p className="text-white mb-3">
                   This tool will inform you about when Carbon Intensity is lowest so you can reduce your personal GHG emissions...
