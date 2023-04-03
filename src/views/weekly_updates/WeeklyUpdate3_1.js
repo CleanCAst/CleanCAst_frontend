@@ -203,6 +203,12 @@ export default function WeeklyUpdate3_1() {
             <PlotlyComponent></PlotlyComponent>
           </Container>
         </div>
+        <div className="section">
+          <Container>
+            <h2>BB Testing Dummy Animation</h2>
+            <PlotlyComponent></PlotlyComponent>
+          </Container>
+        </div>
         <Footer />
       </div>
     </>
