@@ -1,7 +1,7 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
 
-function BBPlotlyComponentPractice(props) {
+function PlotlyComponent(props) {
     const linspaceFn = (startValue, stopValue, cardinality) => {
         var arr = [];
         var step = (stopValue - startValue) / (cardinality - 1);
