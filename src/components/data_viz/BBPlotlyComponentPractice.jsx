@@ -1,29 +1,22 @@
 import React from 'react';
-import Plot from "react-plotly.js"
+import Plot from 'react-plotly.js';
 
-const AreaChart = (props) => {
-    var data = [
-        {
-            x: [1, 2, 3, 4],
-            y: [0, 2, 3, 5],
-            fill: 'tozeroy',
-            type: 'scatter',
-            name: 'Vendor'
-        },
-        {
-            x: [1, 2, 3, 4],
-            y: [3, 5, 1, 7],
-            fill: 'tonexty',
-            type: 'scatter',
-            name: 'Provider'
-        }
-    ];
-
-    return (
-        <Plot
-            data={data}
-            layout={{ width: 500, height: 500, title: 'Area Chart' }} />
-    )
+class App extends React.Component {
+    render() {
+        return (
+            <Plot
+                data={[
+                    {
+                        x: [1, 2, 3],
+                        y: [2, 6, 3],
+                        type: 'scatter',
+                        mode: 'lines+markers',
+                        marker: { color: 'red' },
+                    },
+                    { type: 'bar', x: [1, 2, 3], y: [2, 5, 3] },
+                ]}
+                layout={{ width: 320, height: 240, title: 'A Fancy Plot' }}
+            />
+        );
+    }
 }
-
-export default BBPlotlyComponentPractice;
