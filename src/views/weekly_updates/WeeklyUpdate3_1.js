@@ -50,7 +50,11 @@ import HomePageNavbar from "components/Navbars/HomePageNavbar.js";
 import Footer from "components/Footer/Footer.js";
 
 // plotly data viz
+<<<<<<< HEAD
 import PlotlyComponent2 from "../../components/data_viz/PlotlyComponent2" 
+=======
+import PlotlyComponent from "../../components/data_viz/PlotlyComponent"
+>>>>>>> 773417eda72d819830e0c5ad1bc9ecfde4886420
 
 
 let ps = null;
@@ -203,8 +207,14 @@ export default function WeeklyUpdate3_1() {
             <PlotlyComponent2></PlotlyComponent2>
           </Container>
         </div>
+        <div className="section">
+          <Container>
+            <h2>BB Testing Dummy Animation</h2>
+            <PlotlyComponent></PlotlyComponent>
+          </Container>
+        </div>
         <Footer />
       </div>
     </>
   );
-}
+:diffg LO}
