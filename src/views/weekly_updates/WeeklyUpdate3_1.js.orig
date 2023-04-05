@@ -50,8 +50,12 @@ import HomePageNavbar from "components/Navbars/HomePageNavbar.js";
 import Footer from "components/Footer/Footer.js";
 
 // plotly data viz
-import PlotlyComponent from "../../components/data_viz/PlotlyComponent"
+<<<<<<< HEAD
 import PlotlyComponent2 from "../../components/data_viz/PlotlyComponent2" 
+=======
+import PlotlyComponent from "../../components/data_viz/PlotlyComponent"
+>>>>>>> 773417eda72d819830e0c5ad1bc9ecfde4886420
+
 
 let ps = null;
 
