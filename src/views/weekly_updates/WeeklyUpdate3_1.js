@@ -51,12 +51,13 @@ import Footer from "components/Footer/Footer.js";
 
 // plotly data viz
 import PlotlyComponent from "../../components/data_viz/PlotlyComponent"
-import PlotlyComponent2 from "../../components/data_viz/PlotlyComponent2" 
+import WhenToCharge from "../../components/data_viz/WhenToCharge"
 
 let ps = null;
 
 export default function WeeklyUpdate3_1() {
   const [tabs, setTabs] = React.useState(1);
+
   React.useEffect(() => {
     if (navigator.platform.indexOf("Win") > -1) {
       document.documentElement.className += " perfect-scrollbar-on";
@@ -76,7 +77,12 @@ export default function WeeklyUpdate3_1() {
       }
       document.body.classList.toggle("profile-page");
     };
+
+  
   }, []);
+
+
+
   return (
     <>
       <HomePageNavbar />
@@ -200,7 +206,7 @@ export default function WeeklyUpdate3_1() {
         <div className="section">
           <Container>
             <h2>Initial Version of When to Charge</h2>
-            <PlotlyComponent2></PlotlyComponent2>
+            <WhenToCharge></WhenToCharge>
           </Container>
         </div>
         <Footer />
