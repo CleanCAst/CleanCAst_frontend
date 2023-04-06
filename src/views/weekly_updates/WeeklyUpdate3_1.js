@@ -23,26 +23,9 @@ import PerfectScrollbar from "perfect-scrollbar";
 import { Line } from "react-chartjs-2";
 // reactstrap components
 import {
-  Button,
-  Card,
-  CardHeader,
-  CardBody,
-  Label,
-  FormGroup,
-  Form,
-  Input,
-  FormText,
-  NavItem,
-  NavLink,
-  Nav,
-  Table,
-  TabContent,
-  TabPane,
   Container,
   Row,
-  Col,
-  UncontrolledTooltip,
-  UncontrolledCarousel
+  Col
 } from "reactstrap";
 
 // core components
@@ -77,11 +60,7 @@ export default function WeeklyUpdate3_1() {
       }
       document.body.classList.toggle("profile-page");
     };
-
-  
   }, []);
-
-
 
   return (
     <>

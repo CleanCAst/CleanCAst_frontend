@@ -1,45 +1,25 @@
-/*!
-
-=========================================================
-* BLK Design System React - v1.2.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/blk-design-system-react
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/blk-design-system-react/blob/main/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 import { Link } from "react-router-dom";
+import Scroll from 'react-scroll'
+
+
 // reactstrap components
 import {
-  Button,
   Collapse,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
   NavbarBrand,
   Navbar,
   NavItem,
   NavLink,
   Nav,
-  Container,
-  Row,
-  Col,
-  UncontrolledTooltip
+  Container
 } from "reactstrap";
 
 export default function IndexNavbar() {
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   const [collapseOut, setCollapseOut] = React.useState("");
   const [color, setColor] = React.useState("navbar-transparent");
+  const ScrollLink = Scroll.ScrollLink
+
   React.useEffect(() => {
     window.addEventListener("scroll", changeColor);
     return function cleanup() {
@@ -59,21 +39,6 @@ export default function IndexNavbar() {
       setColor("navbar-transparent");
     }
   };
-  const toggleCollapse = () => {
-    document.documentElement.classList.toggle("nav-open");
-    setCollapseOpen(!collapseOpen);
-  };
-  const onCollapseExiting = () => {
-    setCollapseOut("collapsing-out");
-  };
-  const onCollapseExited = () => {
-    setCollapseOut("");
-  };
-  const scrollToDownload = () => {
-    document
-      .getElementById("download-section")
-      .scrollIntoView({ behavior: "smooth" });
-  };
   return (
     <Navbar className={"fixed-top " + color} color-on-scroll="100" expand="lg">
       <Container>
@@ -81,80 +46,51 @@ export default function IndexNavbar() {
           <NavbarBrand to="/" tag={Link} id="navbar-brand">
             <img src={require("assets/img/CleanCAst_logo.png")} />
           </NavbarBrand>
-          <button
-            aria-expanded={collapseOpen}
-            className="navbar-toggler navbar-toggler"
-            onClick={toggleCollapse}
-          >
-            <span className="navbar-toggler-bar bar1" />
-            <span className="navbar-toggler-bar bar2" />
-            <span className="navbar-toggler-bar bar3" />
-          </button>
         </div>
-        <Collapse
-          className={"justify-content-end " + collapseOut}
-          navbar
-          isOpen={collapseOpen}
-          onExiting={onCollapseExiting}
-          onExited={onCollapseExited}
-        >
-          <div className="navbar-collapse-header">
-            <Row>
-              <Col className="collapse-brand" xs="6">
-                <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                  CleanCAst
-                </a>
-              </Col>
-              <Col className="collapse-close text-right" xs="6">
-                <button
-                  aria-expanded={collapseOpen}
-                  className="navbar-toggler"
-                  onClick={toggleCollapse}>
-                  <i className="tim-icons icon-simple-remove" />
-                </button>
-              </Col>
-            </Row>
-          </div>
-          <Nav navbar>
-            <NavItem className="p-0">
-              <NavLink
-                data-placement="bottom"
-                href="tbd"
-                rel="noopener noreferrer"
-                target="_blank">
-                What is Carbon<br></br>Intensity?
-              </NavLink>
-            </NavItem>
-            <NavItem className="p-0">
-              <NavLink
-                data-placement="bottom"
-                href="tbd"
-                rel="noopener noreferrer"
-                target="_blank">
-                Methodology
-              </NavLink>
-            </NavItem>
-            <NavItem className="p-0">
-              <NavLink
-                data-placement="bottom"
-                href="tbd"
-                rel="noopener noreferrer"
-                target="_blank">
-                Carbon Intensity for<br></br>
-                Personal Charging
-              </NavLink>
-            </NavItem>
-            <NavItem className="p-0">
-              <NavLink
-                data-placement="bottom"
-                href="tbd"
-                rel="noopener noreferrer"
-                target="_blank">
-                Carbon Intensity for<br></br>Developers
-              </NavLink>
-            </NavItem>
-          </Nav>
-        </Collapse>
+        <Nav navbar>
+          <NavItem className="p-0">
+            <NavLink
+              style={{ "cursor": "pointer" }}
+              onClick={() => {
+                const anchor = document.querySelector('#what-is-ci')
+                anchor.scrollIntoView({ behavior: 'smooth', alignToTop: true })
+              }}>
+              What is Carbon<br></br>Intensity?
+            </NavLink>
+
+          </NavItem>
+          <NavItem className="p-0">
+            <NavLink
+              style={{ "cursor": "pointer" }}
+              onClick={() => {
+                const anchor = document.querySelector('#methodology')
+                anchor.scrollIntoView({ behavior: 'smooth', alignToTop: true })
+              }}>
+              Methodology
+            </NavLink>
+          </NavItem>
+          <NavItem className="p-0">
+            <NavLink
+              style={{ "cursor": "pointer" }}
+              onClick={() => {
+                const anchor = document.querySelector('#ci-for-personal')
+                anchor.scrollIntoView({ behavior: 'smooth', alignToTop: true })
+              }}>
+              Carbon Intensity for<br></br>
+              Personal Charging
+            </NavLink>
+          </NavItem>
+          <NavItem className="p-0">
+            <NavLink
+              style={{ "cursor": "pointer" }}
+              onClick={() => {
+                const anchor = document.querySelector('#ci-for-dev')
+                anchor.scrollIntoView({ behavior: 'smooth', alignToTop: true })
+              }}>
+              Carbon Intensity for<br></br>Developers
+            </NavLink>
+          </NavItem>
+        </Nav>
       </Container>
     </Navbar>
   );
