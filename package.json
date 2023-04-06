@@ -32,9 +32,12 @@
     "blk-design-system-react"
   ],
   "dependencies": {
+    "@aws-amplify/cli": "^11.0.3",
+    "@aws-amplify/ui-react": "^4.5.1",
     "@testing-library/jest-dom": "5.16.4",
     "@testing-library/react": "13.3.0",
     "@testing-library/user-event": "14.4.1",
+    "aws-amplify": "^5.0.25",
     "bootstrap": "4.5.3",
     "chart.js": "2.9.4",
     "classnames": "2.3.1",

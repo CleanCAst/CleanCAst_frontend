@@ -64,7 +64,7 @@ export default function Footer() {
                 <Button
                   className="btn-icon btn-neutral btn-round btn-simple"
                   color="default"
-                  href="https://twitter.com/creativetim"
+                  href="https://github.com/kurteulau"
                   id="tooltip622135962"
                   target="_blank">
                   <i className="fab fa-github" />
@@ -73,7 +73,7 @@ export default function Footer() {
                 <Button
                   className="btn-icon btn-neutral btn-round btn-simple"
                   color="default"
-                  href="https://twitter.com/creativetim"
+                  href="https://www.linkedin.com/in/kurt-eulau/"
                   id="tooltip230450801"
                   target="_blank">
                   <i className="fab fa-linkedin" />

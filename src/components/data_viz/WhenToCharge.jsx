@@ -93,7 +93,7 @@ function WhenToCharge(props) {
 
     const red_bars = {
         x: Q4,
-        y: Array(24).fill(Math.max(...y)),
+        y: Array(24).fill(1), // Array(24).fill(Math.max(...y)),
         type: "bar",
         marker: {
             color: 'red'
@@ -104,7 +104,7 @@ function WhenToCharge(props) {
 
     const green_bars = {
         x: Q1,
-        y: Array(24).fill(Math.max(...y)),
+        y: Array(24).fill(1), // Array(24).fill(Math.max(...y)),
         type: "bar",
         marker: {
             color: 'LightGreen'
@@ -142,7 +142,7 @@ function WhenToCharge(props) {
                         x0: 0,
                         x1: 0,
                         y0: 0,
-                        y1: Math.max(...y),
+                        y1: 1,
                         line: {
                             color: 'black',
                             width: 3,
