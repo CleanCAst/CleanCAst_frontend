@@ -79,7 +79,7 @@ export default function IndexNavbar() {
       <Container>
         <div className="navbar-translate">
           <NavbarBrand to="/" tag={Link} id="navbar-brand">
-          CleanCAst
+            <img src={require("assets/img/CleanCAst_logo.png")} />
           </NavbarBrand>
           <button
             aria-expanded={collapseOpen}
@@ -102,7 +102,7 @@ export default function IndexNavbar() {
             <Row>
               <Col className="collapse-brand" xs="6">
                 <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                CleanCAst
+                  CleanCAst
                 </a>
               </Col>
               <Col className="collapse-close text-right" xs="6">
@@ -150,7 +150,7 @@ export default function IndexNavbar() {
                 href="tbd"
                 rel="noopener noreferrer"
                 target="_blank">
-                Carbon Intensity for<br></br>Developers 
+                Carbon Intensity for<br></br>Developers
               </NavLink>
             </NavItem>
           </Nav>

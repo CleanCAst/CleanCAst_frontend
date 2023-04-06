@@ -133,6 +133,9 @@
     span{
       font-weight: $font-weight-bold;
     }
+    img {
+      height: 48px;
+    }
   }
 
   .navbar-toggle button:focus, .navbar-toggler{
