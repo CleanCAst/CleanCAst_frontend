@@ -1,8 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "@aws-amplify/ui-react/styles.css";
-import { API } from "aws-amplify";
-
-
 
 
 // reactstrap components

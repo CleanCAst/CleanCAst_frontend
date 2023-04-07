@@ -3,7 +3,7 @@ import Plot from "react-plotly.js";
 import * as d3 from 'd3';
 
 // import data 
-import forecasts from "../../forecast.json"
+import forecasts from "../../data/forecast_new.json"
 
 // create your forceUpdate hook
 function useForceUpdate(){
@@ -37,7 +37,7 @@ function WhenToCharge(props) {
     //     })
     // };
 
-    console.log(forecasts['utc_date'])
+    console.log(forecasts['2021-01-01'])
 
     const forceUpdate = useForceUpdate();
 
