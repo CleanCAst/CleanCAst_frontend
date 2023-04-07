@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import Plot from "react-plotly.js";
 import * as d3 from 'd3';
 
-//create your forceUpdate hook
+// import data 
+import forecasts from "../../forecast.json"
+
+// create your forceUpdate hook
 function useForceUpdate(){
     console.log("Force update")
     const [value, setValue] = useState(0); // integer state
@@ -33,6 +36,8 @@ function WhenToCharge(props) {
     //         // React.useCallback(() => updateState({}), []);
     //     })
     // };
+
+    console.log(forecasts['utc_date'])
 
     const forceUpdate = useForceUpdate();
 

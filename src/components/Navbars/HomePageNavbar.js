@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Scroll from 'react-scroll'
 
 
 // reactstrap components
@@ -18,7 +17,6 @@ export default function IndexNavbar() {
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   const [collapseOut, setCollapseOut] = React.useState("");
   const [color, setColor] = React.useState("navbar-transparent");
-  const ScrollLink = Scroll.ScrollLink
 
   React.useEffect(() => {
     window.addEventListener("scroll", changeColor);

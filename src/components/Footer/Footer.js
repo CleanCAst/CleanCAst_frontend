@@ -23,7 +23,7 @@ export default function Footer() {
                 <img
                   alt="..."
                   className="img-fluid rounded-circle shadow"
-                  src={require("assets/img/james.jpg")}
+                  src={require("assets/img/bronte_baer.png")}
                   style={{ width: "150px" }}
                 />
               </Col>
@@ -32,7 +32,16 @@ export default function Footer() {
                 <Button
                   className="btn-icon btn-neutral btn-round btn-simple"
                   color="default"
-                  href="https://twitter.com/creativetim"
+                  href="mailto:bronte.baer@berkeley.edu"
+                  id="tooltip230450802"
+                  target="_blank">
+                  <i className="fab fa-envelope" />
+                </Button>
+                <UncontrolledTooltip delay={0} target="tooltip230450802">Email</UncontrolledTooltip>
+                <Button
+                  className="btn-icon btn-neutral btn-round btn-simple"
+                  color="default"
+                  href="https://github.com/bronte-baer"
                   id="tooltip622135962"
                   target="_blank">
                   <i className="fab fa-github" />
@@ -41,7 +50,7 @@ export default function Footer() {
                 <Button
                   className="btn-icon btn-neutral btn-round btn-simple"
                   color="default"
-                  href="https://twitter.com/creativetim"
+                  href="https://www.linkedin.com/in/brontebaer/"
                   id="tooltip230450801"
                   target="_blank">
                   <i className="fab fa-linkedin" />

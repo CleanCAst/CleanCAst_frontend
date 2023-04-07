@@ -5,5 +5,3 @@
  **************************************************************************/
 
 export { default as studioTheme } from "./studioTheme";
-export { default as HomeCreateForm } from "./HomeCreateForm";
-export { default as HomeUpdateForm } from "./HomeUpdateForm";

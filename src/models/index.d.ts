@@ -1,16 +1,12 @@
-import { ModelInit, MutableModel, __modelMeta__, ManagedIdentifier } from "@aws-amplify/datastore";
+import { ModelInit, MutableModel } from "@aws-amplify/datastore";
 // @ts-ignore
 import { LazyLoading, LazyLoadingDisabled } from "@aws-amplify/datastore";
 
-
-
-
+type HomeMetaData = {
+  readOnlyFields: 'createdAt' | 'updatedAt';
+}
 
 type EagerHome = {
-  readonly [__modelMeta__]: {
-    identifier: ManagedIdentifier<Home, 'id'>;
-    readOnlyFields: 'createdAt' | 'updatedAt';
-  };
   readonly id: string;
   readonly address?: string | null;
   readonly image_url?: string | null;
@@ -20,10 +16,6 @@ type EagerHome = {
 }
 
 type LazyHome = {
-  readonly [__modelMeta__]: {
-    identifier: ManagedIdentifier<Home, 'id'>;
-    readOnlyFields: 'createdAt' | 'updatedAt';
-  };
   readonly id: string;
   readonly address?: string | null;
   readonly image_url?: string | null;
@@ -34,6 +26,6 @@ type LazyHome = {
 
 export declare type Home = LazyLoading extends LazyLoadingDisabled ? EagerHome : LazyHome
 
-export declare const Home: (new (init: ModelInit<Home>) => Home) & {
-  copyOf(source: Home, mutator: (draft: MutableModel<Home>) => MutableModel<Home> | void): Home;
+export declare const Home: (new (init: ModelInit<Home, HomeMetaData>) => Home) & {
+  copyOf(source: Home, mutator: (draft: MutableModel<Home, HomeMetaData>) => MutableModel<Home, HomeMetaData> | void): Home;
 }

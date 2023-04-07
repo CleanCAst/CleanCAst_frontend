@@ -10,6 +10,23 @@
       "StackName": "amplify-amplifyhomes-main-234053",
       "StackId": "arn:aws:cloudformation:us-west-2:965646995843:stack/amplify-amplifyhomes-main-234053/adb93f50-b49c-11ed-a5f1-0284f74e1693",
       "AmplifyAppId": "d2yazdjiyns2jt"
+    },
+    "categories": {
+      "auth": {
+        "capstone70344845": {}
+      },
+      "storage": {
+        "co2intensitycombinedfcstsv1": {
+          "tableName": "co2_intensity_combined_fcsts_v1",
+          "region": "us-west-2",
+          "arn": "arn:aws:dynamodb:us-west-2:965646995843:table/co2_intensity_combined_fcsts_v1",
+          "partitionKeyName": "utc_date",
+          "partitionKeyType": "S"
+        }
+      },
+      "api": {
+        "capstone": {}
+      }
     }
   }
 }

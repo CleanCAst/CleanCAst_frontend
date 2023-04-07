@@ -1,10 +1,9 @@
 {
-  "name": "when-to-charge",
+  "name": "clean-cast",
   "version": "1.0.0",
   "description": "UC Berkeledy MIDS Capstone Project",
   "main": "index.js",
-  "author": "Creative Tim",
-  "license": "MIT",
+  "author": "Briana Hart",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/creativetimofficial/blk-design-system-react.git"
@@ -12,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/creativetimofficial/blk-design-system-react/issues"
   },
-  "homepage": "https://main.d2yazdjiyns2jt.amplifyapp.com/",
+  "homepage": "https://cleancast.org/",
   "keywords": [
     "react",
     "reactjs",
