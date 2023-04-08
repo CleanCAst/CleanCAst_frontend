@@ -43,9 +43,8 @@ export default class WhenToCharge extends React.Component {
             xaxis: {
                 title: 'UTC Time',
                 tickmode: 'array',
-                tickvals: [Object.keys(forecasts['2021-01-01'])][0].map(Number),
-                ticktext: [Object.keys(forecasts['2021-01-01'])][0].map(Number),
-                // ticktext: ['4 pm', '5 pm', '6 pm', '11 pm', '12 am', '1 am', '2 am', '3 am', '4 am', '5 am', '6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 pm', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm', '8 pm', '9 pm', '10 pm', '11 pm', '12 am', '1 am', '2 am', '3 am', '4 am', '5 am', '6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 pm', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm', '8 pm', '9 pm', '10 pm', '11 pm', '12 am', '1 am', '2 am', '3 am', '4 am', '5 am', '6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 pm', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm', '8 pm', '9 pm', '10 pm', '11 pm', '12 am', '1 am', '2 am', '3 am', '4 am', '5 am', '6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 pm', '1 pm', '2 pm', '3 pm']
+                tickvals: [6, 17, 22, 26, 38, 41, 47, 65, 70, 76, 79, 81, 86, 90, 94],
+                ticktext: ['10 pm', '9 am', '2 pm', '6 pm', '6 am', '9 am', '3 pm', '9 am', '2 pm', '8 pm', '11 pm', '1 am', '6 am', '10 am', '2 pm'],
             },
             yaxis: {
                 title: 'Carbon Intensity',
@@ -172,6 +171,9 @@ export default class WhenToCharge extends React.Component {
 
         // update times 
         const newTimes = this.addHours(line.x, this.datetime_utc, allEdges);
+        console.log(allEdges)
+        console.log(newTimes)
+
         layout.xaxis.tickvals = allEdges
         layout.xaxis.ticktext = newTimes
 
