@@ -21,12 +21,13 @@ textarea{
 }
 .card{
   h1,h2,h3,h4,h5,h6,p{
-    color: $opacity-8;
+    color: $darkgreen;
+
   }
 }
 h1,h2,h3,h4,h5,h6{
     font-weight: $font-weight-normal;
-    color: $opacity-8;
+    color: $darkgreen;
     margin-top: 12px;
 }
 
@@ -76,7 +77,7 @@ h6, .h6{
     font-weight: $font-weight-bold;
 }
 p{
-    color: $opacity-8;
+    color: $darkgreen;
     margin-bottom: 5px;
 
     &.description{
@@ -89,7 +90,7 @@ p{
   margin-top: 30px;
   margin-bottom: 25px;
   font-weight: $font-weight-bold;
-  color: $opacity-8;
+  color: $darkgreen;
 
 
     &.title-up{
@@ -156,21 +157,21 @@ p{
     }
 
     &.blockquote-white{
-        border-color: $opacity-8;
+        border-color: $darkgreen;
         color: $white;
 
         small{
-            color: $opacity-8;
+            color: $darkgreen;
         }
     }
 }
 
 ul li, ol li{
-  color: $white;
+  color: $darkgreen;
 }
 
 pre{
-  color: $opacity-8;
+  color: $darkgreen;
 }
 
 hr{

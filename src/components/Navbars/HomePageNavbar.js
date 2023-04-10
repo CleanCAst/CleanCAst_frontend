@@ -30,11 +30,15 @@ export default function IndexNavbar() {
       document.body.scrollTop > 99
     ) {
       setColor("bg-primary");
+      document.getElementById("navbar-brand").style.display = "none";
+      document.getElementById("navbar-brand-white").style.display = "inline-block";
     } else if (
       document.documentElement.scrollTop < 100 ||
       document.body.scrollTop < 100
     ) {
       setColor("navbar-transparent");
+      document.getElementById("navbar-brand").style.display = "inline-block";
+      document.getElementById("navbar-brand-white").style.display = "none";
     }
   };
   return (
@@ -42,6 +46,9 @@ export default function IndexNavbar() {
       <Container>
         <div className="navbar-translate">
           <NavbarBrand to="/" tag={Link} id="navbar-brand">
+            <img src={require("assets/img/CleanCAst_logo_green.png")} />
+          </NavbarBrand>
+          <NavbarBrand to="/" tag={Link} id="navbar-brand-white" style={{display: 'none'}}>
             <img src={require("assets/img/CleanCAst_logo.png")} />
           </NavbarBrand>
         </div>

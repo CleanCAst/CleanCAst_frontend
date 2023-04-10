@@ -41,7 +41,7 @@
   }
 
   .navbar-text {
-    color: $white;
+    color: $darkgreen;
   }
 
   .btn{
@@ -104,6 +104,9 @@
 
   &.bg-primary {
     background-color: $primary !important;
+    ul li {
+      color: $white;
+    }
   }
 
   &.bg-warning {
@@ -135,6 +138,12 @@
     }
     img {
       height: 48px;
+    }
+  }
+
+  #navbar-brand-white {
+    img {
+      height: 60px;
     }
   }
 

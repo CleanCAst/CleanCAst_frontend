@@ -116,13 +116,13 @@
               }
 .btn-warning { @include btn-styles($warning, $warning-states);
                 &:not(:disabled):not(.disabled):active{
-                  color: $white;
+                  color: $darkgreen;
                 }
               }
 .btn-danger  { @include btn-styles($danger, $danger-states);
 
               }
-.btn-neutral { @include btn-styles($white, $white); }
+.btn-neutral { @include btn-styles($darkgreen, $darkgreen); }
 
 .btn{
      &:disabled,

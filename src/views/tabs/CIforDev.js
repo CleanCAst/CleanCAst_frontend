@@ -18,7 +18,7 @@ export default function CIforDev() {
             <div className="section" id="ci-for-dev">
                 <Container>
                     <hr className="line-primary" />
-                    <h1 className="text-white">Carbon Intensity for Developers</h1>
+                    <h1>Carbon Intensity for Developers</h1>
 
                 </Container >
             </div ></>

@@ -35,7 +35,7 @@ export default function Footer() {
                   href="mailto:bronte.baer@berkeley.edu"
                   id="tooltip230450802"
                   target="_blank">
-                  <i className="fab fa-envelope" />
+                  <i className="fa fa-envelope"/>
                 </Button>
                 <UncontrolledTooltip delay={0} target="tooltip230450802">Email</UncontrolledTooltip>
                 <Button
@@ -70,6 +70,15 @@ export default function Footer() {
               </Col>
               <Col md="6">
                 <h3 style={{ marginBottom: 10 }}>Kurt Eulau</h3>
+                <Button
+                  className="btn-icon btn-neutral btn-round btn-simple"
+                  color="default"
+                  href="mailto:keulau@berkeley.edu"
+                  id="tooltip230450802"
+                  target="_blank">
+                  <i className="fa fa-envelope"/>
+                </Button>
+                <UncontrolledTooltip delay={0} target="tooltip230450802">Email</UncontrolledTooltip>
                 <Button
                   className="btn-icon btn-neutral btn-round btn-simple"
                   color="default"
@@ -108,6 +117,15 @@ export default function Footer() {
                 <Button
                   className="btn-icon btn-neutral btn-round btn-simple"
                   color="default"
+                  href="mailto:briana.hart@berkeley.edu"
+                  id="tooltip230450802"
+                  target="_blank">
+                  <i className="fa fa-envelope"/>
+                </Button>
+                <UncontrolledTooltip delay={0} target="tooltip230450802">Email</UncontrolledTooltip>
+                <Button
+                  className="btn-icon btn-neutral btn-round btn-simple"
+                  color="default"
                   href="https://github.com/brianahart"
                   id="tooltip622135962"
                   target="_blank">
@@ -140,7 +158,16 @@ export default function Footer() {
                 <Button
                   className="btn-icon btn-neutral btn-round btn-simple"
                   color="default"
-                  href="https://twitter.com/creativetim"
+                  href="mailto:twelsh@berkeley.edu"
+                  id="tooltip230450802"
+                  target="_blank">
+                  <i className="fa fa-envelope"/>
+                </Button>
+                <UncontrolledTooltip delay={0} target="tooltip230450802">Email</UncontrolledTooltip>
+                <Button
+                  className="btn-icon btn-neutral btn-round btn-simple"
+                  color="default"
+                  href=""
                   id="tooltip622135962"
                   target="_blank">
                   <i className="fab fa-github" />
@@ -149,7 +176,7 @@ export default function Footer() {
                 <Button
                   className="btn-icon btn-neutral btn-round btn-simple"
                   color="default"
-                  href="https://twitter.com/creativetim"
+                  href=""
                   id="tooltip230450801"
                   target="_blank">
                   <i className="fab fa-linkedin" />

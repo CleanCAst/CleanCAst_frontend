@@ -27,7 +27,7 @@ export default function PageHeader() {
       <Container>
         <div className="content-center brand">
           {/* <h1 className="h1-seo">CleanCAst</h1> */}
-          <img src={require("assets/img/CleanCAst_logo.png")} />
+          <img src={require("assets/img/CleanCAst_logo_green.png")} />
           <h3 className="d-none d-sm-block">
             Welcome to CleanCAst!
           </h3>
