@@ -1,5 +1,7 @@
 import React from "react";
 
+// mathjax
+import MathJax from "react-mathjax";
 
 // reactstrap components
 import {
@@ -8,9 +10,9 @@ import {
     Col
 } from "reactstrap";
 
-let ps = null;
-
 export default function WhatIsCI() {
+
+    const eq = '\\text{Carbon Intensity} = \\frac{\\text{CO}_2 \\text{ released in lbs}}{\\text{kW·h electricity generated}}';
 
     return (
         <>
@@ -25,11 +27,16 @@ export default function WhatIsCI() {
                     <hr className="line-primary" />
                     <Row className="row-grid justify-content-between align-items-center text-left">
                         <Col lg="6" md="6">
-                            <h1 className="text-white"> What is Carbon Intensity? </h1>
+                            <h1> What is Carbon Intensity? </h1>
+                            <br />
+                            <MathJax.Provider>
+                                <MathJax.Node formula={eq} />
+                            </MathJax.Provider>
+                            <br />
                             <h3>Definition of carbon intensity</h3>
-                            <p>Carbon intensity is the amount of carbon dioxide (CO2) emitted per unit of energy consumed.
-                                It measures the carbon emissions from generating and consuming energy, such as electricity
-                                or transportation fuel.</p>
+                            <p>Carbon intensity is the amount of carbon dioxide (CO<sub>2</sub>) emitted per unit of energy consumed.
+                                Because different sources emit different amounts of CO<sub>2</sub>, the carbon intensity of the electricity 
+                                you use varies throughout the day.</p>
                             <h3>Why do we care about carbon intensity?</h3>
                             <p>We care about carbon intensity because carbon dioxide significantly contributes to climate
                                 change. Reducing carbon intensity is a critical part of efforts to address climate change

@@ -53,6 +53,16 @@ export default function IndexNavbar() {
           </NavbarBrand>
         </div>
         <Nav navbar>
+        <NavItem className="p-0">
+            <NavLink
+              style={{ "cursor": "pointer" }}
+              onClick={() => {
+                const anchor = document.querySelector('#when-to-charge')
+                anchor.scrollIntoView({ behavior: 'smooth', alignToTop: true })
+              }}>
+              When to<br></br>Charge
+            </NavLink>
+          </NavItem>
           <NavItem className="p-0">
             <NavLink
               style={{ "cursor": "pointer" }}
@@ -62,7 +72,6 @@ export default function IndexNavbar() {
               }}>
               What is Carbon<br></br>Intensity?
             </NavLink>
-
           </NavItem>
           <NavItem className="p-0">
             <NavLink
@@ -78,7 +87,7 @@ export default function IndexNavbar() {
             <NavLink
               style={{ "cursor": "pointer" }}
               onClick={() => {
-                const anchor = document.querySelector('#ci-for-personal')
+                const anchor = document.querySelector('#personal-charging')
                 anchor.scrollIntoView({ behavior: 'smooth', alignToTop: true })
               }}>
               Personal<br/>Charging
@@ -88,7 +97,7 @@ export default function IndexNavbar() {
             <NavLink
               style={{ "cursor": "pointer" }}
               onClick={() => {
-                const anchor = document.querySelector('#ci-for-dev')
+                const anchor = document.querySelector('#technical-details')
                 anchor.scrollIntoView({ behavior: 'smooth', alignToTop: true })
               }}>
               Technical<br/>Details

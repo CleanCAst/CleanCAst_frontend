@@ -1,8 +1,14 @@
 // https://medium.com/@jmmccota/plotly-react-and-dynamic-data-d40c7292dbfb
 import React from 'react';
+
+// data viz components
 import Plot from 'react-plotly.js';
 import * as d3 from 'd3';
 
+// reactstrap components
+import {
+    Container,
+} from "reactstrap";
 
 // import data 
 import forecasts from "../../data/forecast.json"
@@ -42,7 +48,7 @@ export default class WhenToCharge extends React.Component {
         },
         layout: {
             datarevision: 0,
-            title: 'When to Charge',
+            // title: 'When to Charge',
             xaxis: {
                 title: 'Time',
                 tickmode: 'array',
@@ -51,9 +57,11 @@ export default class WhenToCharge extends React.Component {
                 tickangle: 90
             },
             yaxis: {
-                title: 'Carbon Intensity',
-                visible: false,
-                showticklabels: false
+                title: 'Carbon Intensity (g CO<sub>2</sub>/kWh)',
+                // visible: false,
+                showgrid: false,
+                tickvals: [0.02,0.97],
+                ticktext: [0,1],
             },
             showlegend: false,
             height: 500,
@@ -161,7 +169,7 @@ export default class WhenToCharge extends React.Component {
         const hour = new Date(timestamp).getHours(); // get the hour from the timestamp
         const newTimes = edges.map(num => {
             const date = new Date(timestamp);
-            
+
             date.setHours(hour + num);
             const hours = date.getHours();
             const ampm = hours >= 12 ? 'pm' : 'am';
@@ -259,7 +267,7 @@ export default class WhenToCharge extends React.Component {
         const q1Edges = this.addAdjacentMissingNumbers(Q1)
         const q4Edges = this.addAdjacentMissingNumbers(Q4)
         var allEdges = [...new Set([...q1Edges, ...q4Edges])].sort((a, b) => a - b)
-        
+
 
         // update date annotation
         line.date = document.getElementById("dateInput").value
@@ -287,27 +295,33 @@ export default class WhenToCharge extends React.Component {
     // ---------- HTML ---------- 
     render() {
         return (
-            <div>
-                <fieldset>
-                    <p>Select a Date:</p>
-                    <input
-                        type="date"
-                        id="dateInput"
-                        min="2021-01-01"
-                        max="2021-12-31"
+            <div className="section" id="when-to-charge">
+                <Container>
+                    <hr className="line-primary" />
+                    <h1>When to Charge</h1>
+                    <fieldset>
+                        <p>Select a Date:</p>
+                        <input
+                            type="date"
+                            id="dateInput"
+                            min="2021-01-01"
+                            max="2021-12-31"
+                        />
+                        <button onClick={this.updateGraph}>Go!</button>
+                    </fieldset>
+                    <Plot
+                        data={[
+                            this.state.line,
+                            this.state.q1_greenbars,
+                            this.state.q4_redbars
+                        ]}
+                        layout={this.state.layout}
+                        revision={this.state.revision}
+                        graphDiv="graph"
                     />
-                    <button onClick={this.updateGraph}>Go!</button>
-                </fieldset>
-                <Plot
-                    data={[
-                        this.state.line,
-                        this.state.q1_greenbars,
-                        this.state.q4_redbars
-                    ]}
-                    layout={this.state.layout}
-                    revision={this.state.revision}
-                    graphDiv="graph"
-                />
+                    <h4>How to Use This Tool</h4>
+                    <p>Ipsum Lorem</p>
+                </Container>
             </div>);
     }
 }

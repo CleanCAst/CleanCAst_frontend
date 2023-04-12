@@ -11,7 +11,7 @@
     }
 
     .container {
-        color: white;
+        color: $darkgreen;
     }
 }
 
@@ -160,7 +160,7 @@
 
     .title,
     .card-plain .card-title{
-        color: $white;
+        color: $darkgreen;
     }
 
     .nav-pills .nav-link{
@@ -175,7 +175,7 @@
     .info-title,
     .info.info-horizontal .icon i,
     .card-pricing.card-plain ul li{
-        color: $white;
+        color: $darkgreen;
     }
     .description,
     .info .icon:not(.icon-circle){
@@ -193,15 +193,15 @@
     }
 
     .footer{
-        color: $white;
+        color: $darkgreen;
     }
     .card-plain{
         [class*="text-"],
         ul li b{
-            color: $white;
+            color: $darkgreen;
         }
         .category{
-            color: rgba($white,.5);
+            color: rgba($darkgreen,.5);
         }
     }
 
@@ -227,7 +227,7 @@
     min-height: 100vh;
     max-height: 999px;
     padding: 0;
-    color: $white;
+    color: $darkgreen;
     position: relative;
     overflow: hidden;
 
@@ -259,7 +259,7 @@
         -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
         text-align: center;
-        color: $white;
+        color: $darkgreen;
         padding: 60px 15px 0;
         width: 100%;
         max-width: 880px;
@@ -621,7 +621,7 @@
 
 
 [data-background-color]:not([data-background-color="gray"]){
-    color: $white;
+    color: $darkgreen;
 
     .separator-line{
         background-color: $opacity-5;
@@ -661,15 +661,15 @@
     &.card-pricing ul li,
     .info.info-horizontal .icon i,
     .card-pricing.card-plain ul li{
-        color: $white;
+        color: $darkgreen;
     }
 
     &.card a:not(.btn):not(.dropdown-item){
-        color: $white;
+        color: $darkgreen;
 
         &:hover,
         &:focus{
-            border-color: $white;
+            border-color: $green;
         }
     }
 
@@ -723,12 +723,12 @@
     .checkbox label::after,
     .checkbox label,
     .radio label{
-        color: $white;
+        color: $darkgreen;
     }
 
     .checkbox input[type="checkbox"]:disabled + label,
     .radio input[type="radio"]:disabled + label  {
-        color: $white;
+        color: $darkgreen;
     }
 
     .radio input[type="radio"]:not(:disabled):hover + label::after,
@@ -770,7 +770,7 @@
     .btn.btn-simple{
         background-color: $transparent-bg;
         border-color: $opacity-5;
-        color: $white;
+        color: $darkgreen;
 
         &:hover,
         &:hover,
@@ -786,14 +786,14 @@
         > .nav-item{
             >.nav-link{
                 i.now-ui-icons{
-                    color: $white;
+                    color: $darkgreen;
                 }
             }
         }
     }
 
     &.section-nucleo-icons .icons-container i:nth-child(6){
-        color: $white;
+        color: $darkgreen;
     }
 }
 

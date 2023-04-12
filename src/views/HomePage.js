@@ -1,5 +1,10 @@
 import React from "react";
 
+// reactstrap components
+import {
+  Container,
+} from "reactstrap";
+
 // core components
 import HomePageNavbar from "components/Navbars/HomePageNavbar.js";
 import PageHeader from "components/PageHeader/PageHeader.js";
@@ -8,14 +13,15 @@ import Footer from "components/Footer/Footer.js";
 // sections for this page/view
 import WhatIsCI from "views/tabs/WhatIsCI";
 import Methodology from "views/tabs/Methodology";
-import CIforPersonal from "views/tabs/CIforPersonal";
-import CIforDev from "views/tabs/CIforDev";
+import PersonalCharging from "views/tabs/PersonalCharging";
+import TechnicalDetails from "views/tabs/TechnicalDetails";
 
+// plotly data viz
+import WhenToCharge from "../components/data_viz/WhenToCharge";
 
 export default function HomePage() {
   React.useEffect(() => {
     document.body.classList.toggle("index-page");
-    // Specify how to clean up after this effect:
     return function cleanup() {
       document.body.classList.toggle("index-page");
     };
@@ -26,10 +32,11 @@ export default function HomePage() {
       <div className="wrapper">
         <PageHeader />
         <div className="main">
+          <WhenToCharge></WhenToCharge>
           <WhatIsCI />
           <Methodology />
-          <CIforPersonal />
-          <CIforDev />
+          <PersonalCharging />
+          <TechnicalDetails />
 
         </div>
         <Footer />

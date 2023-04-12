@@ -22,7 +22,7 @@ export default function Methodology() {
                     src={require("assets/img/path3.png")} /> */}
                 <Container>
                     <hr className="line-primary" />
-                    <h1 className="text-white">Methodology</h1>
+                    <h1>Methodology</h1>
                     <h2>Data</h2>
                     <h4>EIA</h4>
                     <p>“The U.S. Energy Information Administration (EIA) collects, analyzes, and disseminates independent
