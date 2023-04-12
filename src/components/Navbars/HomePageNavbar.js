@@ -81,8 +81,7 @@ export default function IndexNavbar() {
                 const anchor = document.querySelector('#ci-for-personal')
                 anchor.scrollIntoView({ behavior: 'smooth', alignToTop: true })
               }}>
-              Carbon Intensity for<br></br>
-              Personal Charging
+              Personal<br/>Charging
             </NavLink>
           </NavItem>
           <NavItem className="p-0">
@@ -92,7 +91,7 @@ export default function IndexNavbar() {
                 const anchor = document.querySelector('#ci-for-dev')
                 anchor.scrollIntoView({ behavior: 'smooth', alignToTop: true })
               }}>
-              Carbon Intensity for<br></br>Developers
+              Technical<br/>Details
             </NavLink>
           </NavItem>
         </Nav>

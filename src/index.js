@@ -27,15 +27,6 @@ root.render(
         path="/what-is-carbon-intensity"
         render={(props) => <WhatIsCI {...props} />}
       />
-      {/* <Route
-        path="/update-3-1"
-        render={(props) => <WeeklyUpdate3_1 {...props} />}
-      />
-      <Route
-        path="/profile-page"
-        render={(props) => <ProfilePage {...props} />}
-      /> */}
-      {/* <Redirect from="/" to="/components" /> */}
     </Switch>
   </BrowserRouter>
 );
