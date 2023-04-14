@@ -17,7 +17,7 @@ export default function TechnicalDetails() {
         <>
             <div className="section">
                 <Container>
-                    <h2>Testing Tom's slider viz</h2>
+                    <h2>Testing Tom's slider viz example</h2>
                     <iframe width="1000" height="900" frameborder="0" src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Vizzes/carbon_intensity_and_source_double_axis_single_slider_plot.html"></iframe>
                 </Container>
             </div>
