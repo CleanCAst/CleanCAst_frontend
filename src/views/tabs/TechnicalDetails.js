@@ -17,8 +17,11 @@ export default function TechnicalDetails() {
         <>
             <div className="section">
                 <Container>
-                    <h2>Testing Tom's slider viz example</h2>
-                    <iframe width="1000" height="900" frameborder="0" src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Vizzes/carbon_intensity_and_source_double_axis_single_slider_plot.html"></iframe>
+                    <h2>Carbon Intensity Forecasting & Energy Source Net Generation</h2>
+                    <iframe width="1200" height="800" frameborder="0" src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Vizzes/website_slider_viz.html"></iframe>
+                    {/* <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                        <iframe width="4000" height="1400" frameborder="0" src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Vizzes/website_slider_viz.html"></iframe>
+                    </div> */}
                 </Container>
             </div>
             <div className="section">
