@@ -22,9 +22,16 @@ export default function CIforDev() {
                 </Container>
             </div>
             <div className="section" id="ci-for-dev">
+
                 <Container>
                     <hr className="line-primary" />
-                    <h1>Carbon Intensity for Developers</h1>
+                    <h1>FAQ</h1>
+
+                    <ol>
+                        <li>First item</li>
+                        <li>Second item</li>
+                        <li>Third item</li>
+                    </ol>
 
                 </Container >
             </div ></>
