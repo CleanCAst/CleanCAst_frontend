@@ -149,7 +149,7 @@ export default function Footer() {
                 <img
                   alt="..."
                   className="img-fluid rounded-circle shadow"
-                  src={require("assets/img/james.jpg")}
+                  src={require("assets/img/tom_welsh.jpeg")}
                   style={{ width: "150px" }}
                 />
               </Col>
@@ -176,7 +176,7 @@ export default function Footer() {
                 <Button
                   className="btn-icon btn-neutral btn-round btn-simple"
                   color="default"
-                  href=""
+                  href="https://www.linkedin.com/in/thomasrwelsh/"
                   id="tooltip230450801"
                   target="_blank">
                   <i className="fab fa-linkedin" />
