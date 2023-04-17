@@ -306,6 +306,12 @@ export default class WhenToCharge extends React.Component {
                 <Container>
                     <hr className="line-primary" />
                     <h1>When to Charge</h1>
+                    <h4>How to Use This Tool</h4>
+                    <p>This widget helps you plan your energy use. Plug in your cars and devices when energy is green,
+                        and unplug when it's not! Watch out for times in the red because you'll contribute to carbon emissions.
+                        It will automatically load on today's date, but you can choose any other date from the date picker at the
+                        top of the tool.</p>
+                    <br />
                     <fieldset>
                         <p>Select a Date:</p>
                         <input
@@ -326,11 +332,7 @@ export default class WhenToCharge extends React.Component {
                         revision={this.state.revision}
                         graphDiv="graph"
                     />
-                    <h4>How to Use This Tool</h4>
-                    <p>This widget helps you plan your energy use. Plug in your cars and devices when energy is green,
-                        and unplug when it's not! Watch out for times in the red because you'll contribute to carbon emissions.
-                        It will automatically load on today's date, but you can choose any other date from the date picker at the
-                        top of the tool.</p>
+
                 </Container>
             </div>);
     }
