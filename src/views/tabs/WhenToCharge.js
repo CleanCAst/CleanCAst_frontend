@@ -365,7 +365,7 @@ export default class WhenToCharge extends React.Component {
                 <Container>
                     <hr className="line-primary" />
                     <h1>When to Charge</h1>
-                    <h2>How to Use This Tool</h2>
+                    <h2>How to use this tool</h2>
                     <p>This widget helps you plan your energy usage. Plug in your cars and devices when energy is green,
                         and unplug when it's not! Watch out for times in the red because you'll contribute to carbon emissions.
                         The tool will automatically load on today's date, but you can choose any other date from the date picker at the

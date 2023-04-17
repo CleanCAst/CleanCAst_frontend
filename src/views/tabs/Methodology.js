@@ -25,11 +25,11 @@ export default function Methodology() {
 
                     <h1>Methodology</h1>
 
-                    <h2>The CleanCAst Data Pipeline</h2>
+                    <h2>The CleanCAst data pipeline</h2>
                     <img src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Diagrams/final_data_pipeline_diagram.png"
                         style={{ width: '100%', height: 'auto', display: 'block', margin: 'auto' }} />
 
-                    <h2>Data Sources</h2>
+                    <h2>Data sources</h2>
 
                     <p>We built CleanCAst using a data pipeline that aggregates data from the following sources:</p>
                     <ul>
@@ -79,31 +79,34 @@ export default function Methodology() {
                     </ul>
 
 
-                    <h2>Model Architecture</h2>
+                    <h2>Model architecture</h2>
                     <p>Our forecasting model is centered around a Darts implementation of LightGBM—a gradient boosting framework that
                         uses a tree based machine learning algorithm adapted for time series forecasting. A few key advantages include
                         fast training speed, high efficiency, low memory usage, accuracy, and capacity to handle large-scale data.
                     </p>
 
-                    <h3>Model Inputs</h3>
+                    <h3>Model inputs</h3>
 
-                    <h4>Target Series: Carbon Intensity</h4>
+                    <h4>Target series: carbon intensity</h4>
                     <p>The EIA dataset includes hourly historical carbon intensity in pounds per kilowatt hour, so we use these historical
                         numbers as our target series for our model.</p>
                     <img src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Diagrams/eda_charts.png"
                         style={{ width: '100%', height: 'auto', display: 'block', margin: 'auto' }} />
-                    <h4>Past & Future Covariates</h4>
+                    <h4>Past & future covariates</h4>
                     <p>Past and future covariates provide helpful context to improve the prediction of our target series.</p>
+                    <br />
                     <p>Past covariates refer to variables measured in the past that impact the target series we are modeling — for example,
                         the historical net generation of solar, wind, and natural gas or the historical demand for electricity.</p>
+                    <br />
                     <p>Future covariates are variables that hold information about the future at the time of prediction. Temporal attributes, such as
                         the hour of the day or solar generation forecasts, are examples of future covariates. To improve our model, we created net
                         generation forecasts for the different energy sources using the LightGBM modeling framework before predicting the carbon intensity.</p>
+                    <br />
                     <p>Temporal attributes, like the year, month, day of the week, and week of the year, can be used as past and future covariates.</p>
                     <img src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Diagrams/covariates_diagram.png"
                         style={{ width: '80%', height: 'auto', display: 'block', margin: 'auto' }} />
 
-                    <h3>Data Split</h3>
+                    <h3>Data split</h3>
 
                     <p>We trained our LightGBM model on our target series of carbon intensity and leveraged EIA data from July 1, 2018 to December 31, 2020.
                         We used the EIA data from January 1, 2021 to December 31, 2021 to validate our model using an expanding window time series validation
@@ -112,7 +115,7 @@ export default function Methodology() {
                     <img src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Diagrams/train_test_split_diagram.png"
                         style={{ width: '80%', height: 'auto', display: 'block', margin: 'auto' }} />
 
-                    <h3>Model Training</h3>
+                    <h3>Model training</h3>
 
                     <p>Every 24 hours, our model makes a new prediction for the hourly carbon intensity for each of the next 96 hours. Our full 96 hour model
                         is composed of two parts: a  24 hour forecast model and a 96 hour forecast model. </p>

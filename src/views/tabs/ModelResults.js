@@ -39,7 +39,7 @@ export default function ModelResults() {
                     <p>The model performed well at times when natural gas, solar, and wind generation was similar from day to day, increasing at a linear rate
                         with regular fluctuations, or decreasing at a linear rate with regular fluctuations. Dramatic changes, especially in wind or natural gas
                         generation (either increases or decreases) contributed to some of the worst performing forecasts.</p>
-
+                    <br/>
                     <p>Additional error analysis, with time series analysis techniques like the ACF, PACF, and Ljung-Box Test of the residuals, reveal non-white
                         noise errors. However, the predicted values are close enough to the real values to be practically useful, and the CleanCAst results are
                         competitive with other publicly available carbon intensity forecast models.</p>

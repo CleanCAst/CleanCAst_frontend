@@ -13,7 +13,7 @@ export default function FutureOpps() {
                 <Container>
                     <hr className="line-primary" />
                     <h1>Future Opportunities</h1>
-                    <h2>Curtailment Studies</h2>
+                    <h2>Curtailment studies</h2>
                     <p>According to the CAISO, the California Independent System Operator in March 2023, 600 fewer GWh of
                         renewable energy flowed from utilities to consumers than the grid was capable of producing. This temporary phenomenon,
                         called curtailment, occurs either when system-wide electricity supplies exceed demand, or when local distribution bottlenecks
@@ -31,7 +31,7 @@ export default function FutureOpps() {
                             target="_blank">California ISO Managing Oversupply</a>
                     </div>
                     <br/><br/>
-                    <h2>Net Generation Forecasts by Source</h2> 
+                    <h2>Net generation forecasts by source</h2> 
                     <p>Our current model uses only 24 hour natural gas, solar, wind, hydro, and coal generation
                         forecasts as future covariates into the model forecasting carbon intensity. Consequently, the forecasts made through the first day of the
                         forecast window are significantly more accurate than the remaining forecasts. A more complex model architecture may be able to input net
