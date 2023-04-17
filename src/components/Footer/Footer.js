@@ -149,7 +149,7 @@ export default function Footer() {
                 <img
                   alt="..."
                   className="img-fluid rounded-circle shadow"
-                  src={require("assets/img/tom_welsh.jpeg")}
+                  src={require("assets/img/tom_welsh.png")}
                   style={{ width: "150px" }}
                 />
               </Col>
