@@ -56,11 +56,16 @@ export default function Methodology() {
                         regions. The geographic centroids of each solar region were calculated from shapefiles and capacity-weighted
                         weather and solar radiation forecasts were incorporated into the pipeline.
                     </h4>
-
+                    <img src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Vizzes/data_sources_solar_resource_areas_image.png"
+                        style={{ width: '35%', height: 'auto', display: 'block', margin: 'auto' }} />
                     <h4>The <a href="https://sunrise-sunset.org/api"
                         style={{ color: '#4e8538', textDecoration: 'underline' }}
                         target="_blank">Sunrise Sunset API</a> supplied exact sunrise and sunset times in UTC for each day, based on
                         orientation of earth relative to the sun, for each solar resource area.</h4>
+                    <img src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Vizzes/data_sources_suns_rays_and_latitude_image.png"
+                        style={{ width: '40%', height: 'auto', display: 'block', margin: 'auto' }} />
+                    <img src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Vizzes/data_sources_solar_radiation_graph_image.png"
+                        style={{ width: '60%', height: 'auto', display: 'block', margin: 'auto' }} />
 
                     <h2>Model Architecture</h2>
                     <p>Our forecasting model is centered around a Darts implementation of LightGBM—a gradient boosting framework that
