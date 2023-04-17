@@ -110,7 +110,7 @@ export default function IndexNavbar() {
                 const anchor = document.querySelector('#faq')
                 anchor.scrollIntoView({ behavior: 'smooth', alignToTop: true })
               }}>
-              FAQ
+              FAQs
             </NavLink>
           </NavItem>
         </Nav>

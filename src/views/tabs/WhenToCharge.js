@@ -365,10 +365,10 @@ export default class WhenToCharge extends React.Component {
                 <Container>
                     <hr className="line-primary" />
                     <h1>When to Charge</h1>
-                    <h4>How to Use This Tool</h4>
-                    <p>This widget helps you plan your energy use. Plug in your cars and devices when energy is green,
+                    <h2>How to Use This Tool</h2>
+                    <p>This widget helps you plan your energy usage. Plug in your cars and devices when energy is green,
                         and unplug when it's not! Watch out for times in the red because you'll contribute to carbon emissions.
-                        It will automatically load on today's date, but you can choose any other date from the date picker at the
+                        The tool will automatically load on today's date, but you can choose any other date from the date picker at the
                         top of the tool.</p>
                     <br />
                     <fieldset>
@@ -427,7 +427,7 @@ export default class WhenToCharge extends React.Component {
                             reduce your carbon footprint by an average of</i>
                         <br />
                         <p className='charge-percentage'>{this.state.percentage}%</p>
-                        <i>Note: all predictions are based on 2022 data</i>
+                        <i>Note: all predictions are based on 2022 data for California only. See FAQs for further details.</i>
                     </div>
 
 

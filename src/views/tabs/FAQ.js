@@ -18,7 +18,7 @@ export default function FAQ() {
             <div className="section" id="faq">
                 <Container>
                     <hr className="line-primary" />
-                    <h1>FAQ</h1>
+                    <h1>FAQs</h1>
 
                     <h4>1.&ensp; Why study direct emissions vs. lifecycle emissions vs. marginal operating emission rate?</h4>
                     <p>
@@ -73,6 +73,7 @@ export default function FAQ() {
                         which is an amalgamation of many local issues in various geographies. We anticipate its forecast will require much more granular data than is currently available.
                         The CAISO curtailment data we obtained included substantial gaps in their curtailment estimates, making time series forecasting difficult.
                     </p>
+                    <br/><br/><br/><br/>
 
                 </Container >
             </div ></>
