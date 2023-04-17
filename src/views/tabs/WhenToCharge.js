@@ -14,7 +14,7 @@ import {
 import forecasts from "../../data/forecast.json"
 
 // react date slider 
-import Slider, { createSliderWithTooltip } from "rc-slider";
+// import Slider, { createSliderWithTooltip } from "rc-slider";
 import Slider from "rc-slider";
 import 'rc-slider/assets/index.css';
 import 'rc-tooltip/assets/bootstrap.css';
