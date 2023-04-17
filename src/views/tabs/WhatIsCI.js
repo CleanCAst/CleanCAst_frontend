@@ -34,15 +34,15 @@ export default function WhatIsCI() {
                             </MathJax.Provider>
                             <br /> */}
                             <h3>Why Carbon Intensity Matters</h3>
-                            <p>Carbon intensity is a measure of carbon dioxide (CO2) emitted per unit of energy consumed.</p>
+                            <p>Carbon intensity is a measure of carbon dioxide (CO<sub>2</sub>) emitted per unit of energy consumed.</p>
                             <img src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Diagrams/carbon_intensity_formula.png"
                                 style={{ width: '100%', height: 'auto' }} />
                             <p>California has recently launched significant initiatives to put more EVs on the road and phase out natural gas
-                                heaters and stoves. However, unlike fossil fuels, which emit the same amount of (CO<sub>2</sub>) whenever you burn them, the
+                                heaters and stoves. However, unlike fossil fuels, which emit the same amount of CO<sub>2</sub> whenever you burn them, the
                                 indirect emissions of electrically powered vehicles and appliances varies significantly based on what powers
                                 the grid at that time. To fully realize the benefits of electrification and achieve climate goals, it is therefore
                                 crucial to maximize electricity consumption when electricity is greenest.</p>
-                            <h4>Shifting consumption from high to low carbon intensity times reduces CO2 emitted by approximately half!</h4>
+                            <h4>Shifting consumption from high to low carbon intensity times reduces CO<sub>2</sub> emitted by approximately half!</h4>
                             <h3>Why Carbon Intensity Forecasting is Challenging</h3>
                             <p>Carbon intensity varies by hour, day, and season due to changes in electricity demand, intermittent renewables generation
                                 (mainly solar and wind), and conventional generation (natural gas, coal). Even if each of these elements could be individually

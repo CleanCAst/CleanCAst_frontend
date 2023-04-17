@@ -36,7 +36,7 @@ export default function Methodology() {
                         style={{ color: '#4e8538', textDecoration: 'underline' }}
                         target="_blank">The U.S. Energy Information Administration (EIA)</a> supplied actual historical
                         hourly generation data by source (natural gas, solar, nuclear, etc.) for the entire California grid,
-                        and total (CO<sub>2</sub>) emissions for each source.
+                        and total CO<sub>2</sub> emissions for each source.
                     </h4>
                     <h4><a href="https://ncar.ucar.edu/"
                         style={{ color: '#4e8538', textDecoration: 'underline' }}
