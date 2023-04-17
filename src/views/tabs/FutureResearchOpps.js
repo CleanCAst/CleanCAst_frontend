@@ -5,7 +5,7 @@ import {
     Container,
 } from "reactstrap";
 
-export default function PersonalCharging() {
+export default function FutureResearchOpps() {
 
     return (
         <>

@@ -10,7 +10,7 @@ import {
 
 let ps = null;
 
-export default function TechnicalDetails() {
+export default function FAQ() {
 
 
     return (

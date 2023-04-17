@@ -13,8 +13,8 @@ import Footer from "components/Footer/Footer.js";
 // sections for this page/view
 import WhatIsCI from "views/tabs/WhatIsCI";
 import Methodology from "views/tabs/Methodology";
-import PersonalCharging from "views/tabs/PersonalCharging";
-import TechnicalDetails from "views/tabs/TechnicalDetails";
+import FutureResearchOpps from "views/tabs/FutureResearchOpps";
+import FAQ from "views/tabs/FAQ";
 
 // plotly data viz
 import WhenToCharge from "./tabs/WhenToCharge";
@@ -35,8 +35,8 @@ export default function HomePage() {
           <WhenToCharge></WhenToCharge>
           <WhatIsCI />
           <Methodology />
-          <PersonalCharging />
-          <TechnicalDetails />
+          <FutureResearchOpps />
+          <FAQ />
 
         </div>
         <Footer />
