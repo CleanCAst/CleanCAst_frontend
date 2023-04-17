@@ -411,13 +411,13 @@ export default class WhenToCharge extends React.Component {
                         </Row>
                         <Row>
                             <Col>
-                                <Range
-                                    // allowCross={false}
+                                {/* <Range
+                                    allowCross={false}
                                     min={this.state.minRange}
                                     max={this.state.maxRange}
                                     value={this.state.currentValue}
                                     onChange={this.onDateChange}
-                                />
+                                /> */}
                             </Col>
                         </Row>
                     </div>
