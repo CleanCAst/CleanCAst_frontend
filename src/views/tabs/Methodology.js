@@ -36,7 +36,7 @@ export default function Methodology() {
                         style={{ color: '#4e8538', textDecoration: 'underline' }}
                         target="_blank">The U.S. Energy Information Administration (EIA)</a> supplied actual historical
                         hourly generation data by source (natural gas, solar, nuclear, etc.) for the entire California grid,
-                        and total CO2 emissions for each source.
+                        and total (CO<sub>2</sub>) emissions for each source.
                     </h4>
                     <h4><a href="https://ncar.ucar.edu/"
                         style={{ color: '#4e8538', textDecoration: 'underline' }}
@@ -44,7 +44,7 @@ export default function Methodology() {
                         historical hourly weather forecasts for each latitude and longitude at increments of 0.25° via the
                         <a href="https://rda.ucar.edu/datasets/ds084-1/"
                             style={{ color: '#4e8538', textDecoration: 'underline' }}
-                            target="_blank">NCEP GFS 0.25 Degree Global Forecast Grids Historical Archive ds084.1</a>, which we
+                            target="_blank"> NCEP GFS 0.25 Degree Global Forecast Grids Historical Archive ds084.1</a>, which we
                         matched to centroids of CEC resource regions below.
                     </h4>
                     <h4><a href="https://www.energy.ca.gov/"
@@ -52,7 +52,7 @@ export default function Methodology() {
                         target="_blank">California Energy Commission</a> supplied maps of
                         <a href="https://cecgis-caenergy.opendata.arcgis.com/maps/CAEnergy::solar-resource-areas-2022"
                             style={{ color: '#4e8538', textDecoration: 'underline' }}
-                            target="_blank">Solar Resource Areas and Wind Resource Areas</a>, as well as generating capacity of those
+                            target="_blank"> Solar Resource Areas and Wind Resource Areas</a>, as well as generating capacity of those
                         regions. The geographic centroids of each solar region were calculated from shapefiles and capacity-weighted
                         weather and solar radiation forecasts were incorporated into the pipeline.
                     </h4>
