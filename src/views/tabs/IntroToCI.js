@@ -68,7 +68,13 @@ export default function IntroToCI() {
                             indirect emissions of electrically powered vehicles and appliances varies significantly based on what powers
                             the grid at that time. To fully realize the benefits of electrification and achieve climate goals, it is therefore
                             crucial to maximize electricity consumption when electricity is greenest.</p>
-                        <h4>Shifting consumption from high to low carbon intensity times reduces CO<sub>2</sub> emitted by approximately half!</h4>
+                        <p style={{
+                            textAlign: 'center',
+                            fontWeight: '500',
+                            width: '100%',
+                            fontSize: 18
+                        }}>
+                            Shifting consumption from high to low carbon intensity times reduces CO<sub>2</sub> emitted by approximately half!</p>
 
                         <h3>Why Carbon Intensity Forecasting is Challenging</h3>
                         <p>Carbon intensity varies by hour, day, and season due to changes in electricity demand, intermittent renewables generation
