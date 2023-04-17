@@ -26,8 +26,8 @@ export default function Methodology() {
                     <h1>Methodology</h1>
 
                     <h2>The CleanCAst Data Pipeline</h2>
-                    {/* <img src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Diagrams/data_pipeline_diagram.png"
-                        style={{ width: '50%', height: 'auto' }} /> */}
+                    <img src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Diagrams/final_data_pipeline_diagram.png"
+                        style={{ width: '100%', height: 'auto', display: 'block', margin: 'auto' }} />
 
                     <h2>Data Sources</h2>
 
@@ -104,13 +104,7 @@ export default function Methodology() {
                     <p>Every 24 hours, our model makes a new prediction for the hourly carbon intensity for each of the next 96 hours. Our full 96 hour model
                         is composed of two parts: a  24 hour forecast model and a 96 hour forecast model. </p>
 
-                    <img src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Diagrams/retrain_24_diagram.png"
-                        style={{ width: '80%', height: 'auto', display: 'block', margin: 'auto' }} />
-
-                    <img src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Diagrams/retrain_96_diagram.png"
-                        style={{ width: '80%', height: 'auto', display: 'block', margin: 'auto' }} />
-
-                    <img src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Diagrams/retrain_24_96_diagram.png"
+                    <img src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Diagrams/expanding_window_training_diagram.png"
                         style={{ width: '80%', height: 'auto', display: 'block', margin: 'auto' }} />
 
                     <p>To examine the model’s performance during training and testing, we used an expanding window cross-validation strategy with retraining
