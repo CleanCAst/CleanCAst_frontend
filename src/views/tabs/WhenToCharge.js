@@ -16,34 +16,36 @@ import forecasts from "../../data/forecast.json"
 export default class WhenToCharge extends React.Component {
     state = {
         line: {
-            x: [Object.keys(forecasts['2021-01-01'])][0].map(Number),
-            y: [Object.values(forecasts['2021-01-01'])][0].map(Number),
-            name: 'Line',
+            x: [Object.keys(forecasts['2022-01-01'])][0].map(Number),
+            y: [Object.values(forecasts['2022-01-01'])][0].map(Number),
+            name: 'Predicted<br>Carbon<br>Intensity',
             line: {
                 color: 'lightgrey'
             },
             hoverinfo: 'text',
-            hovertext: [Object.values(forecasts['2021-01-01'])][0].map(Number),
-            date: '2021-01-01'
+            hovertext: [Object.values(forecasts['2022-01-01'])][0].map(Number),
+            date: '2022-01-01'
         },
         q1_greenbars: {
-            x: [17, 18, 19, 20, 21, 22, 41, 42, 43, 44, 45, 46, 47, 65, 66, 67, 68, 69, 70, 90, 91, 92, 93, 94],
+            x: [17, 18, 19, 20, 21, 22, 23, 40, 41, 42, 43, 44, 45, 46, 67, 69, 88, 89, 90, 91, 92, 93, 94, 95],
             y: Array(24).fill(1),
             type: "bar",
             marker: {
                 color: 'rgba(0, 128, 0, 1)'
             },
             hoverinfo: 'skip',
+            showlegend: false,
             opacity: 0.4
         },
         q4_redbars: {
-            x: [6, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 76, 77, 78, 79, 81, 82, 83, 84, 85, 86],
+            x: [7, 8, 9, 10, 11, 12, 13, 54, 55, 56, 57, 58, 59, 60, 61, 77, 78, 79, 80, 81, 82, 83, 84, 85],
             y: Array(24).fill(1),
             type: "bar",
             marker: {
                 color: 'rgba(255, 0, 0, 1)'
             },
             hoverinfo: 'skip',
+            showlegend: false,
             opacity: 0.4
         },
         layout: {
@@ -57,13 +59,17 @@ export default class WhenToCharge extends React.Component {
                 tickangle: 90
             },
             yaxis: {
-                title: 'Carbon Intensity (g CO<sub>2</sub>/kWh)',
+                title: 'Carbon Intensity (lb CO<sub>2</sub>/kWh)',
                 // visible: false,
                 showgrid: false,
-                tickvals: [0.02,0.97],
-                ticktext: [0,1],
+                tickvals: [0.02, 0.97],
+                ticktext: [0, 1],
             },
-            showlegend: false,
+            showlegend: true,
+            legend: {
+                x: 1,
+                y: 0.5
+            },
             height: 500,
             width: 1100,
             shapes: [
@@ -151,10 +157,13 @@ export default class WhenToCharge extends React.Component {
     // ---------- HANDLE DATE/TIME ----------
     // set today's date on page load 
     componentDidMount() {
+        const { line, q1_greenbars, q4_redbars, layout } = this.state;
+        console.log(q4_redbars.x)
         const dateInput = document.getElementById("dateInput");
         if (dateInput) {
+            console.log("loaded")
             var dateToday = new Date();
-            dateToday = '2021-' + (dateToday.getMonth() + 1) + '-' + dateToday.getDate();
+            dateToday = '2022-' + (dateToday.getMonth() + 1) + '-' + dateToday.getDate();
             dateInput.valueAsDate = new Date(dateToday);
             this.updateGraph()
         };
@@ -253,7 +262,7 @@ export default class WhenToCharge extends React.Component {
 
     // ---------- UPDATE GRAPH ---------- 
     updateGraph = () => {
-        const { line, q1_greenbars, q2_greenbars, q3_redbars, q4_redbars, layout } = this.state;
+        const { line, q1_greenbars, q4_redbars, layout } = this.state;
 
         // update lines and bars 
         line.y = [Object.values(forecasts[line.date])][0].map(Number);
@@ -267,7 +276,6 @@ export default class WhenToCharge extends React.Component {
         const q1Edges = this.addAdjacentMissingNumbers(Q1)
         const q4Edges = this.addAdjacentMissingNumbers(Q4)
         var allEdges = [...new Set([...q1Edges, ...q4Edges])].sort((a, b) => a - b)
-
 
         // update date annotation
         line.date = document.getElementById("dateInput").value
@@ -289,7 +297,6 @@ export default class WhenToCharge extends React.Component {
         //update state
         this.setState({ revision: this.state.revision + 1 });
         layout.datarevision = this.state.revision + 1;
-
     }
 
     // ---------- HTML ---------- 
@@ -304,8 +311,8 @@ export default class WhenToCharge extends React.Component {
                         <input
                             type="date"
                             id="dateInput"
-                            min="2021-01-01"
-                            max="2021-12-31"
+                            min="2022-01-01"
+                            max="2022-12-31"
                         />
                         <button onClick={this.updateGraph}>Go!</button>
                     </fieldset>
@@ -320,9 +327,9 @@ export default class WhenToCharge extends React.Component {
                         graphDiv="graph"
                     />
                     <h4>How to Use This Tool</h4>
-                    <p>This widget helps you plan your energy use. Plug in your cars and devices when energy is green, 
+                    <p>This widget helps you plan your energy use. Plug in your cars and devices when energy is green,
                         and unplug when it's not! Watch out for times in the red because you'll contribute to carbon emissions.
-                        It will automatically load on today's date, but you can choose any other date from the date picker at the 
+                        It will automatically load on today's date, but you can choose any other date from the date picker at the
                         top of the tool.</p>
                 </Container>
             </div>);

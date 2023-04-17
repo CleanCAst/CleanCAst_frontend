@@ -90,7 +90,7 @@ export default function IndexNavbar() {
                 const anchor = document.querySelector('#personal-charging')
                 anchor.scrollIntoView({ behavior: 'smooth', alignToTop: true })
               }}>
-              Personal<br/>Charging
+              Future Research<br/>Opportunities
             </NavLink>
           </NavItem>
           <NavItem className="p-0">
@@ -100,7 +100,7 @@ export default function IndexNavbar() {
                 const anchor = document.querySelector('#technical-details')
                 anchor.scrollIntoView({ behavior: 'smooth', alignToTop: true })
               }}>
-              Technical<br/>Details
+              FAQ
             </NavLink>
           </NavItem>
         </Nav>

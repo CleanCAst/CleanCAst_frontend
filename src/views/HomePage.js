@@ -17,7 +17,7 @@ import PersonalCharging from "views/tabs/PersonalCharging";
 import TechnicalDetails from "views/tabs/TechnicalDetails";
 
 // plotly data viz
-import WhenToCharge from "../components/data_viz/WhenToCharge";
+import WhenToCharge from "./tabs/WhenToCharge";
 
 export default function HomePage() {
   React.useEffect(() => {
