@@ -59,11 +59,16 @@ export default class WhenToCharge extends React.Component {
                 tickangle: 90
             },
             yaxis: {
-                title: 'Carbon Intensity (lb CO<sub>2</sub>/kWh)',
-                // visible: false,
+                title: 'Carbon Intensity (lbs CO<sub>2</sub>/kWh)',
                 showgrid: false,
                 tickvals: [0.02, 0.97],
                 ticktext: [0, 1],
+            },
+            margin: {
+                l: 60,
+                r: 40,
+                b: 80,
+                t: 20
             },
             showlegend: true,
             legend: {
