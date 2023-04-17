@@ -179,32 +179,32 @@ export default class WhenToCharge extends React.Component {
         },
         revision: 0,
         percentage: 30,
-        startDate: '',
-        startDateLabel: '',
-        endDate: '',
-        endDateLabel: '',
-        currentValue: [],
-        minRange: 0,
-        maxRange: 100,
+        // startDate: '',
+        // startDateLabel: '',
+        // endDate: '',
+        // endDateLabel: '',
+        // currentValue: [],
+        // minRange: 0,
+        // maxRange: 100,
         value: new Date(2022, 0, 1),
-        valueLabel: '01/01/2022',
         minDate: new Date(2022, 0, 1),
-        minDateLabel: '01/01/2022',
         maxDate: new Date(2022, 11, 31),
-        maxDateLabel: '12/31/2022',
     }
 
     // ---------- HANDLE DATE/TIME ----------
     // set today's date on page load 
     componentDidMount() {
+        
+        // handle date
+        var dateToday = new Date();
+        dateToday = '2022-' + (dateToday.getMonth() + 1) + '-' + dateToday.getDate();
+        
+        // update date picker
         const dateInput = document.getElementById("dateInput");
-        if (dateInput) {
-            var dateToday = new Date();
-            dateToday = '2022-' + (dateToday.getMonth() + 1) + '-' + dateToday.getDate();
-            dateInput.valueAsDate = new Date(dateToday);
-            this.updateGraph()
-        };
+        dateInput.valueAsDate = new Date(dateToday);
 
+        //update graph and slider
+        this.updateGraph();
         this.updateSlider();
     };
 
@@ -334,19 +334,23 @@ export default class WhenToCharge extends React.Component {
     // ---------- DATE SLIDER ----------
     updateSlider() {
         // parse startDate and endDate 
-        let startDate = '1/1/2022';
-        let endDate = '12/31/2022';
-        let startDateStr = moment(startDate, 'MM-DD-YYYY');
-        let endDateStr = moment(endDate, 'MM-DD-YYYY');
-        let range = endDateStr.diff(startDateStr, 'days');
+        // let startDate = '1/1/2022';
+        // let endDate = '12/31/2022';
+        // let startDateStr = moment(startDate, 'MM-DD-YYYY');
+        // let endDateStr = moment(endDate, 'MM-DD-YYYY');
+        // let range = endDateStr.diff(startDateStr, 'days');
+
+        var dateToday = new Date();
+        dateToday = new Date(2022, dateToday.getMonth(), dateToday.getDate());
 
         this.setState({
-            startDate,
-            endDate,
-            startDateLabel: startDate,
-            endDateLabel: endDate,
-            maxRange: Math.abs(range),
-            currentValue: [0, Math.abs(range)],
+            // startDate,
+            // endDate,
+            // startDateLabel: startDate,
+            // endDateLabel: endDate,
+            // maxRange: Math.abs(range),
+            // currentValue: [0, Math.abs(range)],
+            value: dateToday
         });
     }
 
@@ -377,13 +381,17 @@ export default class WhenToCharge extends React.Component {
         });
 
         // update date picker and graph
-        let valueFormatted = this.formatDate(this.state.value)
+        let valueFormatted = this.formatDateForInput(this.state.value);
         document.getElementById("dateInput").value = valueFormatted;
-        this.updateGraph()
+        this.updateGraph();
     };
 
-    formatDate = (date) => {
+    formatDateForInput = (date) => {
         return date.toISOString().slice(0, 10); // format as YYYY-MM-DD
+    };
+
+    formatDateLabel = (date) => {
+        return (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear(); // format as MM-DD-YYYY
     };
 
     // ---------- HTML ---------- 
@@ -422,9 +430,9 @@ export default class WhenToCharge extends React.Component {
                     />
                     <div style={{ paddingLeft: 40, paddingRight: 40 }}>
                         <Row>
-                            <Col style={{ textAlign: 'center' }}>
+                            <Col style={{ textAlign: 'center', fontSize: 20 }}>
                                 {/* <b>{this.state.endDateLabel}</b><br/> */}
-                                <b>{this.formatDate(this.state.value)}</b>
+                                <b>{this.formatDateLabel(this.state.value)}</b>
                             </Col>
                         </Row>
                         <Row>
@@ -436,13 +444,13 @@ export default class WhenToCharge extends React.Component {
                                     value={this.state.currentValue}
                                     onChange={this.onDateChange}
                                 /> */}
-                                
+
                                 <Slider
                                     min={this.state.minDate.getTime()}
                                     max={this.state.maxDate.getTime()}
                                     value={this.state.value.getTime()}
                                     onChange={this.handleSliderChange}
-                                    // tipFormatter={this.formatTooltip}
+                                // tipFormatter={this.formatTooltip}
                                 >
                                     <Slider.Handle value={this.state.value.getTime()} style={{ borderColor: '#4caf50' }} />
                                 </Slider>
@@ -450,10 +458,10 @@ export default class WhenToCharge extends React.Component {
                         </Row>
                         <Row>
                             <Col>
-                                <span>{this.formatDate(this.state.minDate)}</span>
+                                <span>{this.formatDateLabel(this.state.minDate)}</span>
                             </Col>
                             <Col style={{ textAlign: 'right' }}>
-                                <span>{this.formatDate(this.state.maxDate)}</span>
+                                <span>{this.formatDateLabel(this.state.maxDate)}</span>
                             </Col>
                         </Row>
                     </div>
