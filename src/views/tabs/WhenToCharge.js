@@ -38,7 +38,7 @@ export default class WhenToCharge extends React.Component {
             y: [Object.values(forecasts['2022-01-01'])][0].map(Number),
             name: 'Predicted<br>Carbon<br>Intensity',
             line: {
-                color: 'lightgrey'
+                color: 'grey'
             },
             hoverinfo: 'text',
             hoverformat: '.2f',
@@ -151,25 +151,25 @@ export default class WhenToCharge extends React.Component {
             annotations: [
                 {
                     x: 4,
-                    y: 0.5,
+                    y: 0.9,
                     text: 'January 1',
                     showarrow: false
                 },
                 {
                     x: 28,
-                    y: 0.5,
+                    y: 0.9,
                     text: 'January 2',
                     showarrow: false
                 },
                 {
                     x: 52,
-                    y: 0.5,
+                    y: 0.9,
                     text: 'January 3',
                     showarrow: false
                 },
                 {
                     x: 76,
-                    y: 0.5,
+                    y: 0.9,
                     text: 'January 4',
                     showarrow: false
                 },
@@ -179,13 +179,6 @@ export default class WhenToCharge extends React.Component {
         },
         revision: 0,
         percentage: 30,
-        // startDate: '',
-        // startDateLabel: '',
-        // endDate: '',
-        // endDateLabel: '',
-        // currentValue: [],
-        // minRange: 0,
-        // maxRange: 100,
         value: new Date(2022, 0, 1),
         minDate: new Date(2022, 0, 1),
         maxDate: new Date(2022, 11, 31),
@@ -194,11 +187,11 @@ export default class WhenToCharge extends React.Component {
     // ---------- HANDLE DATE/TIME ----------
     // set today's date on page load 
     componentDidMount() {
-        
+
         // handle date
         var dateToday = new Date();
         dateToday = '2022-' + (dateToday.getMonth() + 1) + '-' + dateToday.getDate();
-        
+
         // update date picker
         const dateInput = document.getElementById("dateInput");
         dateInput.valueAsDate = new Date(dateToday);
@@ -206,6 +199,7 @@ export default class WhenToCharge extends React.Component {
         //update graph and slider
         this.updateGraph();
         this.updateSlider();
+
     };
 
     // define days and months arrays
@@ -316,11 +310,7 @@ export default class WhenToCharge extends React.Component {
         var allEdges = [...new Set([...q1Edges, ...q4Edges])].sort((a, b) => a - b)
 
         // update slider value
-        // function date2range(evt) {
-        //     let date = parseISOLocal(this.value);
-        //     let numDays = (date - new Date(this.min)) / 8.64e7;
-        //     document.querySelector('#r0').value = numDays;
-        //   }
+        this.state.value = this.datetime;
 
         // update times 
         const newTimes = this.addHours(this.datetime, allEdges);
@@ -339,46 +329,14 @@ export default class WhenToCharge extends React.Component {
 
     // ---------- DATE SLIDER ----------
     updateSlider() {
-        // parse startDate and endDate 
-        // let startDate = '1/1/2022';
-        // let endDate = '12/31/2022';
-        // let startDateStr = moment(startDate, 'MM-DD-YYYY');
-        // let endDateStr = moment(endDate, 'MM-DD-YYYY');
-        // let range = endDateStr.diff(startDateStr, 'days');
-
+        // parse today's date
         var dateToday = new Date();
         dateToday = new Date(2022, dateToday.getMonth(), dateToday.getDate());
 
         this.setState({
-            // startDate,
-            // endDate,
-            // startDateLabel: startDate,
-            // endDateLabel: endDate,
-            // maxRange: Math.abs(range),
-            // currentValue: [0, Math.abs(range)],
             value: dateToday
         });
     }
-
-    // onDateChange = ([newStartDate, newEndDate]) => {
-    //     // update current values and invoke updateDates
-    //     this.setState(
-    //         {
-    //             currentValue: [newStartDate, newEndDate],
-    //         },
-    //         () => {
-    //             let [min, max] = this.state.currentValue;
-    //             let end = moment(this.state.endDate, 'MM-DD-YYYY').subtract(this.state.maxRange - max, 'd');
-
-    //             this.setState({ endDateLabel: (end.get('month') + 1) + '/' + end.get('date') + '/' + end.get('year'), });
-    //         }
-    //     );
-
-    //     // update date picker and graph
-    //     let endDateFormatted = moment(this.state.endDateLabel, 'MM-DD-YYYY').format('YYYY-MM-DD')
-    //     document.getElementById("dateInput").value = endDateFormatted;
-    //     this.updateGraph()
-    // };
 
     handleSliderChange = (value) => {
         // update current value
@@ -437,30 +395,24 @@ export default class WhenToCharge extends React.Component {
                     <div style={{ paddingLeft: 40, paddingRight: 40 }}>
                         <Row>
                             <Col style={{ textAlign: 'center', fontSize: 20 }}>
-                                {/* <b>{this.state.endDateLabel}</b><br/> */}
-                                <b>{this.formatDateLabel(this.state.value)}</b>
+                                <p>{this.formatDateLabel(this.state.value)}</p>
                             </Col>
                         </Row>
                         <Row>
                             <Col>
-                                {/* <Range
-                                    allowCross={false}
-                                    min={this.state.minRange}
-                                    max={this.state.maxRange}
-                                    value={this.state.currentValue}
-                                    onChange={this.onDateChange}
-                                /> */}
-
                                 <Slider
                                     min={this.state.minDate.getTime()}
                                     max={this.state.maxDate.getTime()}
                                     value={this.state.value.getTime()}
                                     onChange={this.handleSliderChange}
-                                // tipFormatter={this.formatTooltip}
+                                    railStyle={{ backgroundColor: '#ddd' }}
+                                    trackStyle={{ backgroundColor: '#4E8538' }}
+                                    handleStyle={{ borderColor: '#4E8538' }}
                                 >
                                     <Slider.Handle value={this.state.value.getTime()} style={{ borderColor: '#4caf50' }} />
                                 </Slider>
                             </Col>
+                            {/* <p>{this.state.value.getTime()}</p> */}
                         </Row>
                         <Row>
                             <Col>
@@ -471,8 +423,14 @@ export default class WhenToCharge extends React.Component {
                             </Col>
                         </Row>
                     </div>
+                    <div style={{ textAlign: 'center' }}>
+                        <i>Plugging in during the green times vs. the red times can
+                            reduce your carbon footprint by an average of</i>
+                        <br />
+                        <p className='charge-percentage'>{this.state.percentage}%</p>
+                        <i>Note: all predictions are based on 2022 data</i>
+                    </div>
 
-                    <p className='charge-percentage'>{this.state.percentage}%</p>
 
                 </Container>
             </div>);
