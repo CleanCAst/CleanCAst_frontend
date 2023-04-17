@@ -8,6 +8,8 @@ import * as d3 from 'd3';
 // reactstrap components
 import {
     Container,
+    Col,
+    Row
 } from "reactstrap";
 
 // import data 
@@ -26,7 +28,6 @@ var moment = require('moment');
 const createSliderWithTooltip = Slider.createSliderWithTooltip;
 const Range = createSliderWithTooltip(Slider.Range);
 const Handle = Slider.Handle;
-
 
 
 export default class WhenToCharge extends React.Component {
@@ -177,7 +178,6 @@ export default class WhenToCharge extends React.Component {
         },
         revision: 0,
         percentage: 30,
-        slidervalue: 0,
         startDate: '',
         startDateLabel: '',
         endDate: '',
@@ -190,7 +190,6 @@ export default class WhenToCharge extends React.Component {
     // ---------- HANDLE DATE/TIME ----------
     // set today's date on page load 
     componentDidMount() {
-        const { line, q1_greenbars, q4_redbars, layout } = this.state;
         const dateInput = document.getElementById("dateInput");
         if (dateInput) {
             var dateToday = new Date();
@@ -234,50 +233,37 @@ export default class WhenToCharge extends React.Component {
 
         // create Q1 array
         if (quantile == 'Q1') {
-            var Q = []
+            var Q_num = []
+            var Q_val = []
             x_arr.forEach((num_x, index) => {
                 const num_y = y_arr[index];
                 if (num_y >= Q0_lim && num_y <= Q1_lim) {
-                    Q.push(num_x)
-                }
-            });
-        };
-
-        // create Q2 array
-        if (quantile == 'Q2') {
-            var Q = []
-            x_arr.forEach((num_x, index) => {
-                const num_y = y_arr[index];
-                if (num_y >= Q1_lim && num_y <= Q2_lim) {
-                    Q.push(num_x)
-                }
-            });
-        };
-
-        // create Q3 array
-        if (quantile == 'Q3') {
-            var Q = []
-            x_arr.forEach((num_x, index) => {
-                const num_y = y_arr[index];
-                if (num_y >= Q2_lim && num_y <= Q3_lim) {
-                    Q.push(num_x)
+                    Q_num.push(num_x)
+                    Q_val.push(num_y)
                 }
             });
         };
 
         // create Q4 array 
         if (quantile == 'Q4') {
-            var Q = []
+            var Q_num = []
+            var Q_val = []
             x_arr.forEach((num_x, index) => {
                 const num_y = y_arr[index];
                 if (num_y >= Q3_lim && num_y <= Q4_lim) {
-                    Q.push(num_x)
+                    Q_num.push(num_x)
+                    Q_val.push(num_y)
                 }
             });
         };
 
-        return Q;
+        return [Q_num, Q_val];
     };
+
+    getAverage(array) {
+        const sum = array.reduce((a, b) => a + b);
+        return sum / array.length;
+    }
 
     // ---------- X AXIS NUMBERS ---------- 
     addAdjacentMissingNumbers(numbers) {
@@ -301,14 +287,14 @@ export default class WhenToCharge extends React.Component {
         line.y = [Object.values(forecasts[line.date])][0].map(Number);
         // line.hovertext = [Object.values(forecasts[line.date])][0].map(Number);
         line.hovertext = [Object.values(forecasts[line.date])][0].map(Number);
-        const Q1 = this.createQuantArray(this.state.line.x, this.state.line.y, 'Q1');
-        const Q4 = this.createQuantArray(this.state.line.x, this.state.line.y, 'Q4');
-        q1_greenbars.x = Q1;
-        q4_redbars.x = Q4;
+        const [Q1_num, Q1_val] = this.createQuantArray(this.state.line.x, this.state.line.y, 'Q1');
+        const [Q4_num, Q4_val] = this.createQuantArray(this.state.line.x, this.state.line.y, 'Q4');
+        q1_greenbars.x = Q1_num;
+        q4_redbars.x = Q4_num;
 
         // update xaxis
-        const q1Edges = this.addAdjacentMissingNumbers(Q1)
-        const q4Edges = this.addAdjacentMissingNumbers(Q4)
+        const q1Edges = this.addAdjacentMissingNumbers(Q1_num)
+        const q4Edges = this.addAdjacentMissingNumbers(Q4_num)
         var allEdges = [...new Set([...q1Edges, ...q4Edges])].sort((a, b) => a - b)
 
         // update date annotation
@@ -329,8 +315,9 @@ export default class WhenToCharge extends React.Component {
         layout.xaxis.ticktext = newTimes
 
         //update percentage 
-        const average = array => array.reduce((a, b) => a + b) / array.length;
-        this.state.percentage = parseFloat(100 * (average(Q1) - average(Q4)) / average(Q1)).toFixed(2);
+        const q1_avg = this.getAverage(Q1_val)
+        const q4_avg = this.getAverage(Q4_val)
+        this.state.percentage = parseFloat(100 * (q4_avg - q1_avg) / q4_avg).toFixed(2);
 
         //update state
         this.setState({ revision: this.state.revision + 1 });
@@ -340,21 +327,17 @@ export default class WhenToCharge extends React.Component {
     // ---------- DATE SLIDER ----------
     updateSlider() {
         // parse startDate and endDate 
-        // this.state.startDate = '23-10-2018';
-        // let startDate = '23-10-2018';
-        // let endDate = '12-02-2020';
-
-        let startDate = '2022-01-01';
-        let endDate = '2022-12-31';
+        let startDate = '1/1/2022';
+        let endDate = '12/31/2022';
+        let startDateStr = moment(startDate, 'MM-DD-YYYY');
+        let endDateStr = moment(endDate, 'MM-DD-YYYY');
+        let range = endDateStr.diff(startDateStr, 'days');
 
         this.setState({
             startDate,
             endDate,
             startDateLabel: startDate,
             endDateLabel: endDate,
-        });
-        let range = 365;
-        this.setState({
             maxRange: Math.abs(range),
             currentValue: [0, Math.abs(range)],
         });
@@ -362,39 +345,23 @@ export default class WhenToCharge extends React.Component {
 
     onDateChange = ([newStartDate, newEndDate]) => {
         // update current values and invoke updateDates
-        // this.setState(
-        //     {
-        //         currentValue: [newStartDate, newEndDate],
-        //     },
-        //     () => {
-        //         this.updateDates();
-        //     }
-        // );
-        console.log("Testing")
-    };
+        this.setState(
+            {
+                currentValue: [newStartDate, newEndDate],
+            },
+            () => {
+                let [min, max] = this.state.currentValue;
+                let end = moment(this.state.endDate, 'MM-DD-YYYY').subtract(this.state.maxRange - max, 'd');
 
-    updateDates() {
-        // Update labels for the start and end dates
-        let [min, max] = this.state.currentValue;
-        let start = moment(this.state.startDate, 'DD-MM-YYYY').add(min, 'd');
-        let end = moment(this.state.endDate, 'DD-MM-YYYY').subtract(
-            this.state.maxRange - max,
-            'd'
+                this.setState({ endDateLabel: (end.get('month')+1) + '/' + end.get('date') + '/' + end.get('year'), });
+            }
         );
 
-        this.setState({
-            startDateLabel: this.formatDate(start),
-            endDateLabel: this.formatDate(end),
-        });
-    }
-
-    formatDate(date) {
-        let day, month, year = 0;
-        day = date.get('date');
-        month = date.get('month');
-        year = date.get('year');
-        return year + '-' + month + '-' + day;
-    }
+        // update date picker and graph
+        let endDateFormatted = moment(this.state.endDateLabel,'MM-DD-YYYY').format('YYYY-MM-DD')
+        document.getElementById("dateInput").value = endDateFormatted;
+        this.updateGraph()
+    };
 
     // ---------- HTML ---------- 
     render() {
@@ -429,22 +396,30 @@ export default class WhenToCharge extends React.Component {
                         revision={this.state.revision}
                         graphDiv="graph"
                     />
-                    <p>{this.state.slidervalue}</p>
-                    <p>{this.state.startDate}</p>
-                    <Range
-                        allowCross={false}
-                        min={this.state.minRange}
-                        max={this.state.maxRange}
-                        value={this.state.currentValue}
-                        onChange={this.onDateChange}
-                    />
-                    <Slider
-                        min={this.state.minRange}
-                        max={this.state.maxRange}
-                        // value={this.state.slidervalue}
-                        onChange={this.onDateChange}
-                    />
-                    <p>{this.state.endDate}</p>
+                    <div style={{ paddingLeft: 40, paddingRight: 40 }}>
+                        <Row>
+                            <Col>
+                                <span>{this.state.startDate}</span>
+                            </Col>
+                            <Col style={{ textAlign: 'center' }}>
+                                <b>{this.state.endDateLabel}</b>
+                            </Col>
+                            <Col style={{ textAlign: 'right' }}>
+                                <span>{this.state.endDate}</span>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                <Range
+                                    // allowCross={false}
+                                    min={this.state.minRange}
+                                    max={this.state.maxRange}
+                                    value={this.state.currentValue}
+                                    onChange={this.onDateChange}
+                                />
+                            </Col>
+                        </Row>
+                    </div>
 
                     <p className='charge-percentage'>{this.state.percentage}%</p>
 
