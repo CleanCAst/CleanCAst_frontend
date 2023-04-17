@@ -5,11 +5,11 @@ import {
     Container,
 } from "reactstrap";
 
-export default function FutureResearchOpps() {
+export default function FutureOpps() {
 
     return (
         <>
-            <div className="section" id="personal-charging">
+            <div className="section" id="future-opps">
                 <Container>
                     <hr className="line-primary" />
                     <h1>Future Research Opportunities</h1>

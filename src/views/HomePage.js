@@ -15,7 +15,7 @@ import WhenToCharge from "./tabs/WhenToCharge";
 import WhatIsCI from "views/tabs/WhatIsCI";
 import Methodology from "views/tabs/Methodology";
 import ModelResults from "views/tabs/ModelResults";
-import FutureResearchOpps from "views/tabs/FutureResearchOpps";
+import FutureOpps from "views/tabs/FutureOpps";
 import FAQ from "views/tabs/FAQ";
 
 
@@ -36,7 +36,7 @@ export default function HomePage() {
           <WhatIsCI />
           <Methodology />
           <ModelResults />
-          <FutureResearchOpps />
+          <FutureOpps />
           <FAQ />
 
         </div>

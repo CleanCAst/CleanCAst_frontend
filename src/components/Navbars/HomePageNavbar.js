@@ -97,17 +97,17 @@ export default function IndexNavbar() {
             <NavLink
               style={{ "cursor": "pointer" }}
               onClick={() => {
-                const anchor = document.querySelector('#personal-charging')
+                const anchor = document.querySelector('#future-opps')
                 anchor.scrollIntoView({ behavior: 'smooth', alignToTop: true })
               }}>
-              Future Research<br/>Opportunities
+              Future<br/>Opportunities
             </NavLink>
           </NavItem>
           <NavItem className="p-0">
             <NavLink
               style={{ "cursor": "pointer" }}
               onClick={() => {
-                const anchor = document.querySelector('#technical-details')
+                const anchor = document.querySelector('#faq')
                 anchor.scrollIntoView({ behavior: 'smooth', alignToTop: true })
               }}>
               FAQ
