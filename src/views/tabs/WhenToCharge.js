@@ -15,9 +15,17 @@ import forecasts from "../../data/forecast.json"
 
 // react date slider 
 import Slider, { createSliderWithTooltip } from "rc-slider";
+import Slider from "rc-slider";
+import 'rc-slider/assets/index.css';
+import 'rc-tooltip/assets/bootstrap.css';
+import Tooltip from 'rc-tooltip';
 import 'rc-slider/assets/index.css';
 
-const SliderWithTooltip = createSliderWithTooltip(Slider);
+var moment = require('moment');
+
+const createSliderWithTooltip = Slider.createSliderWithTooltip;
+const Range = createSliderWithTooltip(Slider.Range);
+const Handle = Slider.Handle;
 
 
 
@@ -169,14 +177,20 @@ export default class WhenToCharge extends React.Component {
         },
         revision: 0,
         percentage: 30,
-        slidervalue: 0
+        slidervalue: 0,
+        startDate: '',
+        startDateLabel: '',
+        endDate: '',
+        endDateLabel: '',
+        currentValue: [],
+        minRange: 0,
+        maxRange: 100,
     }
 
     // ---------- HANDLE DATE/TIME ----------
     // set today's date on page load 
     componentDidMount() {
         const { line, q1_greenbars, q4_redbars, layout } = this.state;
-        console.log(q4_redbars.x)
         const dateInput = document.getElementById("dateInput");
         if (dateInput) {
             var dateToday = new Date();
@@ -184,6 +198,8 @@ export default class WhenToCharge extends React.Component {
             dateInput.valueAsDate = new Date(dateToday);
             this.updateGraph()
         };
+
+        this.updateSlider();
     };
 
     // define days and months arrays
@@ -314,9 +330,6 @@ export default class WhenToCharge extends React.Component {
 
         //update percentage 
         const average = array => array.reduce((a, b) => a + b) / array.length;
-        console.log("Q1 and Q4 avgs:")
-        console.log(average(Q1))
-        console.log(average(Q4))
         this.state.percentage = parseFloat(100 * (average(Q1) - average(Q4)) / average(Q1)).toFixed(2);
 
         //update state
@@ -325,16 +338,63 @@ export default class WhenToCharge extends React.Component {
     }
 
     // ---------- DATE SLIDER ----------
-    onSliderChange = slidervalue => {
-        this.setState(
-            {
-                slidervalue
-            },
-            () => {
-                console.log(this.state.slidervalue);
-            }
-        );
+    updateSlider() {
+        // parse startDate and endDate 
+        // this.state.startDate = '23-10-2018';
+        // let startDate = '23-10-2018';
+        // let endDate = '12-02-2020';
+
+        let startDate = '2022-01-01';
+        let endDate = '2022-12-31';
+
+        this.setState({
+            startDate,
+            endDate,
+            startDateLabel: startDate,
+            endDateLabel: endDate,
+        });
+        let range = 365;
+        this.setState({
+            maxRange: Math.abs(range),
+            currentValue: [0, Math.abs(range)],
+        });
+    }
+
+    onDateChange = ([newStartDate, newEndDate]) => {
+        // update current values and invoke updateDates
+        // this.setState(
+        //     {
+        //         currentValue: [newStartDate, newEndDate],
+        //     },
+        //     () => {
+        //         this.updateDates();
+        //     }
+        // );
+        console.log("Testing")
     };
+
+    updateDates() {
+        // Update labels for the start and end dates
+        let [min, max] = this.state.currentValue;
+        let start = moment(this.state.startDate, 'DD-MM-YYYY').add(min, 'd');
+        let end = moment(this.state.endDate, 'DD-MM-YYYY').subtract(
+            this.state.maxRange - max,
+            'd'
+        );
+
+        this.setState({
+            startDateLabel: this.formatDate(start),
+            endDateLabel: this.formatDate(end),
+        });
+    }
+
+    formatDate(date) {
+        let day, month, year = 0;
+        day = date.get('date');
+        month = date.get('month');
+        year = date.get('year');
+        return year + '-' + month + '-' + day;
+    }
 
     // ---------- HTML ---------- 
     render() {
@@ -370,12 +430,22 @@ export default class WhenToCharge extends React.Component {
                         graphDiv="graph"
                     />
                     <p>{this.state.slidervalue}</p>
-                    <SliderWithTooltip
-                        min={0}
-                        max={120}
-                        onChange={this.onSliderChange}
-                        value={this.state.slidervalue}
+                    <p>{this.state.startDate}</p>
+                    <Range
+                        allowCross={false}
+                        min={this.state.minRange}
+                        max={this.state.maxRange}
+                        value={this.state.currentValue}
+                        onChange={this.onDateChange}
                     />
+                    <Slider
+                        min={this.state.minRange}
+                        max={this.state.maxRange}
+                        // value={this.state.slidervalue}
+                        onChange={this.onDateChange}
+                    />
+                    <p>{this.state.endDate}</p>
+
                     <p className='charge-percentage'>{this.state.percentage}%</p>
 
                 </Container>
