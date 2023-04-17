@@ -87,6 +87,16 @@ export default function IndexNavbar() {
             <NavLink
               style={{ "cursor": "pointer" }}
               onClick={() => {
+                const anchor = document.querySelector('#model-results')
+                anchor.scrollIntoView({ behavior: 'smooth', alignToTop: true })
+              }}>
+              Model Results
+            </NavLink>
+          </NavItem>
+          <NavItem className="p-0">
+            <NavLink
+              style={{ "cursor": "pointer" }}
+              onClick={() => {
                 const anchor = document.querySelector('#personal-charging')
                 anchor.scrollIntoView({ behavior: 'smooth', alignToTop: true })
               }}>

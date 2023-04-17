@@ -11,13 +11,13 @@ import PageHeader from "components/PageHeader/PageHeader.js";
 import Footer from "components/Footer/Footer.js";
 
 // sections for this page/view
+import WhenToCharge from "./tabs/WhenToCharge";
 import WhatIsCI from "views/tabs/WhatIsCI";
 import Methodology from "views/tabs/Methodology";
+import ModelResults from "views/tabs/ModelResults";
 import FutureResearchOpps from "views/tabs/FutureResearchOpps";
 import FAQ from "views/tabs/FAQ";
 
-// plotly data viz
-import WhenToCharge from "./tabs/WhenToCharge";
 
 export default function HomePage() {
   React.useEffect(() => {
@@ -35,6 +35,7 @@ export default function HomePage() {
           <WhenToCharge></WhenToCharge>
           <WhatIsCI />
           <Methodology />
+          <ModelResults />
           <FutureResearchOpps />
           <FAQ />
 
