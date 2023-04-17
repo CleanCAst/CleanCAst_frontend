@@ -90,8 +90,8 @@ export default function Methodology() {
                         We used the EIA data from January 1, 2021 to December 31, 2021 to validate our model using an expanding window time series validation
                         framework (see the Model Training section below). After feature engineering and hyper-parameter tuning, we retrained the model on the
                         July 1, 2018 to December 31, 2021 data and ran our finished model to predict carbon intensity for all of 2022.</p>
-                    {/* <img src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Diagrams/covariates_diagram.png"
-                        style={{ width: '80%', height: 'auto' }} /> */}
+                    <img src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Diagrams/train_test_split_diagram.png"
+                        style={{ width: '80%', height: 'auto', display: 'block', margin: 'auto' }} />
 
                     <h3>Model Training</h3>
 
