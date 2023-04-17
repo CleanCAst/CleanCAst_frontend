@@ -411,7 +411,7 @@ export default class WhenToCharge extends React.Component {
                         </Row>
                         <Row>
                             <Col>
-                                <Range
+                                <Slider
                                     allowCross={false}
                                     min={this.state.minRange}
                                     max={this.state.maxRange}
