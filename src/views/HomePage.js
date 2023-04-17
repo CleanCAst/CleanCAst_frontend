@@ -12,7 +12,7 @@ import Footer from "components/Footer/Footer.js";
 
 // sections for this page/view
 import WhenToCharge from "./tabs/WhenToCharge";
-import WhatIsCI from "views/tabs/WhatIsCI";
+import IntroToCI from "views/tabs/IntroToCI";
 import Methodology from "views/tabs/Methodology";
 import ModelResults from "views/tabs/ModelResults";
 import FutureOpps from "views/tabs/FutureOpps";
@@ -33,7 +33,7 @@ export default function HomePage() {
         <PageHeader />
         <div className="main">
           <WhenToCharge></WhenToCharge>
-          <WhatIsCI />
+          <IntroToCI />
           <Methodology />
           <ModelResults />
           <FutureOpps />

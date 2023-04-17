@@ -13,6 +13,14 @@ import {
 // import data 
 import forecasts from "../../data/forecast.json"
 
+// react date slider 
+import Slider, { createSliderWithTooltip } from "rc-slider";
+import 'rc-slider/assets/index.css';
+
+const SliderWithTooltip = createSliderWithTooltip(Slider);
+
+
+
 export default class WhenToCharge extends React.Component {
     state = {
         line: {
@@ -23,7 +31,10 @@ export default class WhenToCharge extends React.Component {
                 color: 'lightgrey'
             },
             hoverinfo: 'text',
-            hovertext: [Object.values(forecasts['2022-01-01'])][0].map(Number),
+            hoverformat: '.2f',
+            // hovertext: 'Carbon Intensity:<br>' + [Object.values(forecasts['2022-01-01'])][0].map(Number),
+            hovertemplate: 'Predicted Carbon Intensity:<br>%{y:.2f}<extra></extra>',
+            hovermode: 'x unified',
             date: '2022-01-01'
         },
         q1_greenbars: {
@@ -157,6 +168,8 @@ export default class WhenToCharge extends React.Component {
             bargroupgap: 0
         },
         revision: 0,
+        percentage: 30,
+        slidervalue: 0
     }
 
     // ---------- HANDLE DATE/TIME ----------
@@ -166,7 +179,6 @@ export default class WhenToCharge extends React.Component {
         console.log(q4_redbars.x)
         const dateInput = document.getElementById("dateInput");
         if (dateInput) {
-            console.log("loaded")
             var dateToday = new Date();
             dateToday = '2022-' + (dateToday.getMonth() + 1) + '-' + dateToday.getDate();
             dateInput.valueAsDate = new Date(dateToday);
@@ -271,6 +283,7 @@ export default class WhenToCharge extends React.Component {
 
         // update lines and bars 
         line.y = [Object.values(forecasts[line.date])][0].map(Number);
+        // line.hovertext = [Object.values(forecasts[line.date])][0].map(Number);
         line.hovertext = [Object.values(forecasts[line.date])][0].map(Number);
         const Q1 = this.createQuantArray(this.state.line.x, this.state.line.y, 'Q1');
         const Q4 = this.createQuantArray(this.state.line.x, this.state.line.y, 'Q4');
@@ -299,10 +312,29 @@ export default class WhenToCharge extends React.Component {
         layout.xaxis.tickvals = allEdges
         layout.xaxis.ticktext = newTimes
 
+        //update percentage 
+        const average = array => array.reduce((a, b) => a + b) / array.length;
+        console.log("Q1 and Q4 avgs:")
+        console.log(average(Q1))
+        console.log(average(Q4))
+        this.state.percentage = parseFloat(100 * (average(Q1) - average(Q4)) / average(Q1)).toFixed(2);
+
         //update state
         this.setState({ revision: this.state.revision + 1 });
         layout.datarevision = this.state.revision + 1;
     }
+
+    // ---------- DATE SLIDER ----------
+    onSliderChange = slidervalue => {
+        this.setState(
+            {
+                slidervalue
+            },
+            () => {
+                console.log(this.state.slidervalue);
+            }
+        );
+    };
 
     // ---------- HTML ---------- 
     render() {
@@ -337,6 +369,14 @@ export default class WhenToCharge extends React.Component {
                         revision={this.state.revision}
                         graphDiv="graph"
                     />
+                    <p>{this.state.slidervalue}</p>
+                    <SliderWithTooltip
+                        min={0}
+                        max={120}
+                        onChange={this.onSliderChange}
+                        value={this.state.slidervalue}
+                    />
+                    <p className='charge-percentage'>{this.state.percentage}%</p>
 
                 </Container>
             </div>);

@@ -67,10 +67,10 @@ export default function IndexNavbar() {
             <NavLink
               style={{ "cursor": "pointer" }}
               onClick={() => {
-                const anchor = document.querySelector('#what-is-ci')
+                const anchor = document.querySelector('#intro-ci')
                 anchor.scrollIntoView({ behavior: 'smooth', alignToTop: true })
               }}>
-              What is Carbon<br></br>Intensity?
+              Intro to Carbon<br></br>Intensity
             </NavLink>
           </NavItem>
           <NavItem className="p-0">
