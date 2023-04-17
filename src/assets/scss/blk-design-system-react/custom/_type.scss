@@ -210,8 +210,9 @@ p {
 
 ul li,
 ol li {
-    color: $darkgreen;
-    font-weight: 300;
+    font-weight: $font-weight-light;
+    font-size: 15px;
+    margin-bottom: 8px;
 }
 
 pre {
