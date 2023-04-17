@@ -16,8 +16,8 @@ import {
 import forecasts from "../../data/forecast.json"
 
 // react date slider 
-// import Slider, { createSliderWithTooltip } from "rc-slider";
-import Slider from "rc-slider";
+import Slider, { createSliderWithTooltip } from "rc-slider";
+// import Slider from "rc-slider";
 import 'rc-slider/assets/index.css';
 import 'rc-tooltip/assets/bootstrap.css';
 import Tooltip from 'rc-tooltip';
@@ -25,8 +25,9 @@ import 'rc-slider/assets/index.css';
 
 var moment = require('moment');
 
-const createSliderWithTooltip = Slider.createSliderWithTooltip;
-const Range = createSliderWithTooltip(Slider.Range);
+// const createSliderWithTooltip = Slider.createSliderWithTooltip;
+// const Range = createSliderWithTooltip(Slider.Range);
+const Range = Slider.Range;
 const Handle = Slider.Handle;
 
 
