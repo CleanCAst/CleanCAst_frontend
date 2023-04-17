@@ -101,6 +101,9 @@ export default function Methodology() {
 
                     <h3>Model Training</h3>
 
+                    <p>Every 24 hours, our model makes a new prediction for the hourly carbon intensity for each of the next 96 hours. Our full 96 hour model
+                        is composed of two parts: a  24 hour forecast model and a 96 hour forecast model. </p>
+
                     <img src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Diagrams/retrain_24_diagram.png"
                         style={{ width: '80%', height: 'auto', display: 'block', margin: 'auto' }} />
 
