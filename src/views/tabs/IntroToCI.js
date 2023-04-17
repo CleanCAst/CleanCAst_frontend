@@ -48,6 +48,8 @@ export default function IntroToCI() {
                             <p>Looking for some 2022 forecasts to explore? Start here:</p>
                             <img src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Diagrams/best_worst_errors.png"
                                 style={{ width: '80%', height: 'auto' }} />
+                            <p>*Lower error indicates higher forecast accuracy. Errors measured by mean absolute percentage error (MAPE). For additional details,
+                                see the Methodology section below.</p>
                             <h3>Why Carbon Intensity Matters</h3>
                             <p>California has recently launched significant initiatives to put more EVs on the road and phase out natural gas
                                 heaters and stoves. However, unlike fossil fuels, which emit the same amount of CO<sub>2</sub> whenever you burn them, the

@@ -26,8 +26,8 @@ export default function Methodology() {
                     <h1>Methodology</h1>
 
                     <h2>The CleanCAst Data Pipeline</h2>
-                    {/* <img src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Diagrams/data_pipeline_diagram.png"
-                        style={{ width: '50%', height: 'auto' }} /> */}
+                    <img src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Diagrams/final_data_pipeline_diagram.png"
+                        style={{ width: '100%', height: 'auto', display: 'block', margin: 'auto' }} />
 
                     <h2>Data Sources</h2>
 
