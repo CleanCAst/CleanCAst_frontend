@@ -71,7 +71,6 @@ export default class WhenToCharge extends React.Component {
         },
         layout: {
             datarevision: 0,
-            // title: 'When to Charge',
             xaxis: {
                 title: 'Time',
                 tickmode: 'array',

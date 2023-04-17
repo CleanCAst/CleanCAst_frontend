@@ -32,13 +32,14 @@ export default function Methodology() {
                     <h2>Data Sources</h2>
 
                     <h3>We built CleanCAst using a data pipeline that aggregates data from the following sources:</h3>
-                    <h4><a href="https://www.eia.gov/"
+                    <p><a href="https://www.eia.gov/"
                         style={{ color: '#4e8538', textDecoration: 'underline' }}
                         target="_blank">The U.S. Energy Information Administration (EIA)</a> supplied actual historical
                         hourly generation data by source (natural gas, solar, nuclear, etc.) for the entire California grid,
                         and total CO<sub>2</sub> emissions for each source.
-                    </h4>
-                    <h4><a href="https://ncar.ucar.edu/"
+                    </p>
+                    <br />
+                    <p><a href="https://ncar.ucar.edu/"
                         style={{ color: '#4e8538', textDecoration: 'underline' }}
                         target="_blank">The National Center for Atmospheric Research (NCAR) Research Data Archive</a> supplied
                         historical hourly weather forecasts for each latitude and longitude at increments of 0.25° via the
@@ -46,8 +47,9 @@ export default function Methodology() {
                             style={{ color: '#4e8538', textDecoration: 'underline' }}
                             target="_blank"> NCEP GFS 0.25 Degree Global Forecast Grids Historical Archive ds084.1</a>, which we
                         matched to centroids of CEC resource regions below.
-                    </h4>
-                    <h4><a href="https://www.energy.ca.gov/"
+                    </p>
+                    <br />
+                    <p><a href="https://www.energy.ca.gov/"
                         style={{ color: '#4e8538', textDecoration: 'underline' }}
                         target="_blank">California Energy Commission</a> supplied maps of
                         <a href="https://cecgis-caenergy.opendata.arcgis.com/maps/CAEnergy::solar-resource-areas-2022"
@@ -55,13 +57,15 @@ export default function Methodology() {
                             target="_blank"> Solar Resource Areas and Wind Resource Areas</a>, as well as generating capacity of those
                         regions. The geographic centroids of each solar region were calculated from shapefiles and capacity-weighted
                         weather and solar radiation forecasts were incorporated into the pipeline.
-                    </h4>
+                    </p>
                     <img src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Vizzes/data_sources_solar_resource_areas_image.png"
                         style={{ width: '35%', height: 'auto', display: 'block', margin: 'auto' }} />
-                    <h4>The <a href="https://sunrise-sunset.org/api"
+                    <br />
+                    <p>The <a href="https://sunrise-sunset.org/api"
                         style={{ color: '#4e8538', textDecoration: 'underline' }}
                         target="_blank">Sunrise Sunset API</a> supplied exact sunrise and sunset times in UTC for each day, based on
-                        orientation of earth relative to the sun, for each solar resource area.</h4>
+                        orientation of earth relative to the sun, for each solar resource area.
+                    </p>
                     <img src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Vizzes/data_sources_suns_rays_and_latitude_image.png"
                         style={{ width: '40%', height: 'auto', display: 'block', margin: 'auto' }} />
                     <img src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Vizzes/data_sources_solar_radiation_graph_image.png"
@@ -70,7 +74,8 @@ export default function Methodology() {
                     <h2>Model Architecture</h2>
                     <p>Our forecasting model is centered around a Darts implementation of LightGBM—a gradient boosting framework that
                         uses a tree based machine learning algorithm adapted for time series forecasting. A few key advantages include
-                        fast training speed, high efficiency, low memory usage, accuracy, and capacity to handle large-scale data.</p>
+                        fast training speed, high efficiency, low memory usage, accuracy, and capacity to handle large-scale data.
+                    </p>
 
                     <h3>Model Inputs</h3>
 
