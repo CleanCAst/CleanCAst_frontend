@@ -15,12 +15,6 @@ export default function FAQ() {
 
     return (
         <>
-            <div className="section">
-                <Container>
-                    <h2>Carbon Intensity Forecasting & Energy Source Net Generation</h2>
-                    <iframe width="1200" height="800" frameBorder="0" src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Vizzes/website_slider_viz.html"></iframe>
-                </Container>
-            </div>
             <div className="section" id="faq">
                 <Container>
                     <hr className="line-primary" />
