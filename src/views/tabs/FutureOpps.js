@@ -29,7 +29,7 @@ export default function FutureOpps() {
                             style={{ color: '#4e8538', textDecoration: 'underline' }}
                             target="_blank">California ISO Managing Oversupply</a>
                     </div>
-                    <p></p>
+                    <br/><br/>
                     <p><u>Net Generation Forecasts by Source:</u> Our current model uses only 24 hour natural gas, solar, wind, hydro, and coal generation
                         forecasts as future covariates into the model forecasting carbon intensity. Consequently, the forecasts made through the first day of the
                         forecast window are significantly more accurate than the remaining forecasts. A more complex model architecture may be able to input net
