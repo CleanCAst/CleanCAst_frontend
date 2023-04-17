@@ -290,9 +290,20 @@ export default class WhenToCharge extends React.Component {
     updateGraph = () => {
         const { line, q1_greenbars, q4_redbars, layout } = this.state;
 
+
+        // update date annotation
+        line.date = document.getElementById("dateInput").value
+        this.datetime = new Date(line.date + ' 00:00:00 UTC');
+        layout.annotations[0].text = this.months[this.datetime.getUTCMonth()] + ' ' + this.datetime.getUTCDate();
+        this.datetime_1 = new Date(this.datetime.setDate(this.datetime.getDate() + 1));
+        layout.annotations[1].text = this.months[this.datetime_1.getUTCMonth()] + ' ' + (this.datetime_1.getUTCDate());
+        this.datetime_2 = new Date(this.datetime_1.setDate(this.datetime_1.getDate() + 1));
+        layout.annotations[2].text = this.months[this.datetime_2.getUTCMonth()] + ' ' + (this.datetime_2.getUTCDate());
+        this.datetime_3 = new Date(this.datetime_2.setDate(this.datetime_2.getDate() + 1));
+        layout.annotations[3].text = this.months[this.datetime_3.getUTCMonth()] + ' ' + (this.datetime_3.getUTCDate());
+
         // update lines and bars 
         line.y = [Object.values(forecasts[line.date])][0].map(Number);
-        // line.hovertext = [Object.values(forecasts[line.date])][0].map(Number);
         line.hovertext = [Object.values(forecasts[line.date])][0].map(Number);
         const [Q1_num, Q1_val] = this.createQuantArray(this.state.line.x, this.state.line.y, 'Q1');
         const [Q4_num, Q4_val] = this.createQuantArray(this.state.line.x, this.state.line.y, 'Q4');
@@ -304,17 +315,12 @@ export default class WhenToCharge extends React.Component {
         const q4Edges = this.addAdjacentMissingNumbers(Q4_num)
         var allEdges = [...new Set([...q1Edges, ...q4Edges])].sort((a, b) => a - b)
 
-        // update date annotation
-        line.date = document.getElementById("dateInput").value
-        this.datetime = new Date(line.date + ' 00:00:00 UTC');
-        // layout.annotations[0].text = this.days[this.datetime.getUTCDay()] + '<br>' + this.months[this.datetime.getUTCMonth()] + ' ' + this.datetime.getUTCDate()
-        layout.annotations[0].text = this.months[this.datetime.getUTCMonth()] + ' ' + this.datetime.getUTCDate();
-        this.datetime_1 = new Date(this.datetime.setDate(this.datetime.getDate() + 1));
-        layout.annotations[1].text = this.months[this.datetime_1.getUTCMonth()] + ' ' + (this.datetime_1.getUTCDate());
-        this.datetime_2 = new Date(this.datetime_1.setDate(this.datetime_1.getDate() + 1));
-        layout.annotations[2].text = this.months[this.datetime_2.getUTCMonth()] + ' ' + (this.datetime_2.getUTCDate());
-        this.datetime_3 = new Date(this.datetime_2.setDate(this.datetime_2.getDate() + 1));
-        layout.annotations[3].text = this.months[this.datetime_3.getUTCMonth()] + ' ' + (this.datetime_3.getUTCDate());
+        // update slider value
+        // function date2range(evt) {
+        //     let date = parseISOLocal(this.value);
+        //     let numDays = (date - new Date(this.min)) / 8.64e7;
+        //     document.querySelector('#r0').value = numDays;
+        //   }
 
         // update times 
         const newTimes = this.addHours(this.datetime, allEdges);
