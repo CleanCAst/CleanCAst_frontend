@@ -72,7 +72,6 @@ export default class WhenToCharge extends React.Component {
         layout: {
             datarevision: 0,
             xaxis: {
-                title: 'Time',
                 tickmode: 'array',
                 tickvals: [6, 17, 22, 26, 38, 41, 47, 65, 70, 76, 79, 81, 86, 90, 94],
                 ticktext: ['10 pm', '9 am', '2 pm', '6 pm', '6 am', '9 am', '3 pm', '9 am', '2 pm', '8 pm', '11 pm', '1 am', '6 am', '10 am', '2 pm'],
@@ -87,7 +86,7 @@ export default class WhenToCharge extends React.Component {
             margin: {
                 l: 60,
                 r: 40,
-                b: 80,
+                b: 60,
                 t: 20
             },
             showlegend: true,
@@ -393,8 +392,8 @@ export default class WhenToCharge extends React.Component {
                     />
                     <div style={{ paddingLeft: 40, paddingRight: 40 }}>
                         <Row>
-                            <Col style={{ textAlign: 'center', fontSize: 20 }}>
-                                <p>{this.formatDateLabel(this.state.value)}</p>
+                            <Col style={{ textAlign: 'center' }}>
+                                <p style={{fontSize: 20, fontWeight: 500}}>{this.formatDateLabel(this.state.value)}</p>
                             </Col>
                         </Row>
                         <Row>
