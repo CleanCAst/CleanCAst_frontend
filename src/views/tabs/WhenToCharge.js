@@ -1,4 +1,3 @@
-// https://medium.com/@jmmccota/plotly-react-and-dynamic-data-d40c7292dbfb
 import React from 'react';
 
 // data viz components
@@ -44,6 +43,9 @@ export default class WhenToCharge extends React.Component {
             hoverformat: '.2f',
             // hovertext: 'Carbon Intensity:<br>' + [Object.values(forecasts['2022-01-01'])][0].map(Number),
             hovertemplate: 'Predicted Carbon Intensity:<br>%{y:.2f}<extra></extra>',
+            hoverlabel: {
+                bgcolor: 'white',
+            },
             hovermode: 'x unified',
             date: '2022-01-01'
         },
@@ -393,7 +395,7 @@ export default class WhenToCharge extends React.Component {
                     <div style={{ paddingLeft: 40, paddingRight: 40 }}>
                         <Row>
                             <Col style={{ textAlign: 'center' }}>
-                                <p style={{fontSize: 20, fontWeight: 500}}>{this.formatDateLabel(this.state.value)}</p>
+                                <p style={{ fontSize: 20, fontWeight: 500 }}>{this.formatDateLabel(this.state.value)}</p>
                             </Col>
                         </Row>
                         <Row>
@@ -410,7 +412,6 @@ export default class WhenToCharge extends React.Component {
                                     <Slider.Handle value={this.state.value.getTime()} style={{ borderColor: '#4caf50' }} />
                                 </Slider>
                             </Col>
-                            {/* <p>{this.state.value.getTime()}</p> */}
                         </Row>
                         <Row>
                             <Col>
@@ -428,8 +429,6 @@ export default class WhenToCharge extends React.Component {
                         <p className='charge-percentage'>{this.state.percentage}%</p>
                         <i>Note: all predictions are based on 2022 data for California only. See FAQs for further details.</i>
                     </div>
-
-
                 </Container>
             </div>);
     }
