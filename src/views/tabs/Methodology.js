@@ -39,13 +39,6 @@ export default function Methodology() {
                             hourly generation data by source (natural gas, solar, nuclear, etc.) for the entire California grid,
                             and total CO<sub>2</sub> emissions for each source.
                         </li>
-
-                        <li><a href="https://www.eia.gov/"
-                            style={{ color: '#4e8538', textDecoration: 'underline' }}
-                            target="_blank">The U.S. Energy Information Administration (EIA)</a> supplied actual historical
-                            hourly generation data by source (natural gas, solar, nuclear, etc.) for the entire California grid,
-                            and total CO<sub>2</sub> emissions for each source.
-                        </li>
                         <li><a href="https://ncar.ucar.edu/"
                             style={{ color: '#4e8538', textDecoration: 'underline' }}
                             target="_blank">The National Center for Atmospheric Research (NCAR) Research Data Archive</a> supplied
