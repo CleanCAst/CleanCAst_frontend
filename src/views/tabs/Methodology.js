@@ -121,7 +121,7 @@ export default function Methodology() {
                         produced and consumed across the grid. As mentioned above, to make the most accurate forecast, the model used these known values from
                         the past (past covariates) and projections about what those generation figures might be in the future (future covariates). These future
                         covariates are intermediate forecasts that improve accuracy but also introduce design complications. As a result, we created a composite
-                        96-hour forecast consisting of a regular 96-hour forecast that excluded energy forecasts as future covariates and a 24-hour forecast that
+                        96 hour forecast consisting of a regular 96 hour forecast that excluded energy forecasts as future covariates and a 24 hour forecast that
                         included energy forecasts as future covariates. This 24 + 96 structure proved effective and enabled us to avoid time-leakage problems
                         while working within the constraints of our model architecture. See Model Construction below for implementation details. </p>
 
