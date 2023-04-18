@@ -48,17 +48,17 @@ export default function IntroToCI() {
                             <i className="fa-solid fa-charging-station" style={{ fontSize: 200 }}></i>
                         </Col> */}
                         <iframe width="1200" height="720" frameBorder="0" src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Vizzes/website_slider_viz.html"></iframe>
-                        <p><i>The ”actual" values (dark green line) are the carbon intensity reported by the U.S. Energy Information Administration (EIA)
+                        <i>The ”actual" values (dark green line) are the carbon intensity reported by the U.S. Energy Information Administration (EIA)
                             from metered energy consumption. Our carbon intensity predictions are the "Forecast" values (light green line). The
-                            predictions are made every 24 hours for the next 96 hours.</i></p>
+                            predictions are made every 24 hours for the next 96 hours.</i>
 
                         <h4>Looking for some 2022 forecasts to explore? Start here:</h4>
                         <br></br>
                         <img src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Diagrams/best_worst_errors.png"
                             style={{ width: '40%', height: 'auto', display: 'block', margin: 'auto' }} />
                         <br></br>
-                        <p>*Lower error indicates higher forecast accuracy. Errors measured by mean absolute percentage error (MAPE). For additional details,
-                            see the Methodology section below.</p>
+                        <i>Lower error indicates higher forecast accuracy. Errors measured by mean absolute percentage error (MAPE). For additional details,
+                            see the Methodology section below.</i>
                         <h2>Why carbon intensity matters</h2>
                         <p>California has recently launched significant initiatives to put more EVs on the road and phase out natural gas
                             heaters and stoves. However, unlike fossil fuels, which emit the same amount of CO<sub>2</sub> whenever you burn them, the

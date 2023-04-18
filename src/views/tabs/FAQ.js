@@ -73,7 +73,16 @@ export default function FAQ() {
                         which is an amalgamation of many local issues in various geographies. We anticipate its forecast will require much more granular data than is currently available.
                         The CAISO curtailment data we obtained included substantial gaps in their curtailment estimates, making time series forecasting difficult.
                     </p>
-                    <br/><br/><br/><br/>
+
+                    <h4>5.&ensp; How did you calculate the carbon footprint reduction percent?</h4>
+                    <p>
+                        The average carbon intensity over the forecast window for the highest quartile is compared to the average for the lowest quartile.
+                    </p>
+                    <br/>
+                    <p style={{textAlign: 'center'}}>
+                        Percentage Footprint Reduction = 100* (Highest Quartile - Lowest Quartile) / Highest Quartile
+                    </p>
+                    <br /><br /><br /><br />
 
                 </Container >
             </div ></>
