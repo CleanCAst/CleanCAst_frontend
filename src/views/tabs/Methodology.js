@@ -29,7 +29,7 @@ export default function Methodology() {
                     <img src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Diagrams/final_data_pipeline_diagram.png"
                         style={{ width: '100%', height: 'auto', display: 'block', margin: 'auto' }} />
 
-                    <h2>Data sources</h2>
+                    <h2>Data Sources</h2>
 
                     <p>We built CleanCAst using a data pipeline that aggregates data from the following sources:</p>
                     <ul>
@@ -79,13 +79,13 @@ export default function Methodology() {
                     </ul>
 
 
-                    <h2>Model architecture</h2>
+                    <h2>Model Architecture</h2>
                     <p>Our forecasting model is centered around a Darts implementation of LightGBM—a gradient boosting framework that
                         uses a tree based machine learning algorithm adapted for time series forecasting. A few key advantages include
                         fast training speed, high efficiency, low memory usage, accuracy, and capacity to handle large-scale data.
                     </p>
 
-                    <h3>Model inputs</h3>
+                    <h3>Model Inputs</h3>
 
                     <h4>Target series: carbon intensity</h4>
                     <p>The EIA dataset includes hourly historical carbon intensity in pounds per kilowatt hour, so we use these historical
@@ -106,7 +106,7 @@ export default function Methodology() {
                     <img src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Diagrams/covariates_diagram.png"
                         style={{ width: '80%', height: 'auto', display: 'block', margin: 'auto' }} />
 
-                    <h3>Data split</h3>
+                    <h3>Data Split</h3>
 
                     <p>We trained our LightGBM model on our target series of carbon intensity and leveraged EIA data from July 1, 2018 to December 31, 2020.
                         We used the EIA data from January 1, 2021 to December 31, 2021 to validate our model using an expanding window time series validation
@@ -115,11 +115,27 @@ export default function Methodology() {
                     <img src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Diagrams/train_test_split_diagram.png"
                         style={{ width: '80%', height: 'auto', display: 'block', margin: 'auto' }} />
 
-                    <h3>Model training</h3>
+                    <h3>Model Design</h3>
 
-                    <p>Every 24 hours, our model makes a new prediction for the hourly carbon intensity for each of the next 96 hours. Our full 96 hour model
-                        is composed of two parts: a  24 hour forecast model and a 96 hour forecast model. </p>
+                    <p>Our EIA dataset had hourly records of energy generation and consumption by source—the amount of wind, solar, natural gas, etc.,
+                        produced and consumed across the grid. As mentioned above, to make the most accurate forecast, the model used these known values from
+                        the past (past covariates) and projections about what those generation figures might be in the future (future covariates). These future
+                        covariates are intermediate forecasts that improve accuracy but also introduce design complications. As a result, we created a composite
+                        96-hour forecast consisting of a regular 96-hour forecast that excluded energy forecasts as future covariates and a 24-hour forecast that
+                        included energy forecasts as future covariates. This 24 + 96 structure proved effective and enabled us to avoid time-leakage problems
+                        while working within the constraints of our model architecture. See Model Construction below for implementation details. </p>
 
+                    <h3>Model Construction</h3>
+                    <h5>Step 1: 24 Hour Forecasts</h5>
+                    <p>We first generate 24 hours of predictions every 24 hours and include future covariates like the net generation forecast of natural gas
+                        or solar energy production. The net generation forecasts for natural gas and solar are possible because a 24 hour forecast made every 24 hours
+                        does not create duplicate values for each timestamp.</p>
+                    <h5>Step 2: 96 Hour Forecasts</h5>
+                    <p>For the 96 hour forecasts, we cannot include the net generation forecasts as future covariates. This is because 96 hour predictions created
+                        every 24 hours produces duplicate forecasts for each timestamp.</p>
+                    <h5>Step 3: 24 + 96 Hour Forecasts</h5>
+                    <p>To create the best set of model predictions, we use the 24 hour forecasts that include the net generation forecasts as future covariates to
+                        overwrite the first 24 hours of predictions from the 96 hour forecasts. </p>
                     <img src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Diagrams/expanding_window_training_diagram.png"
                         style={{ width: '80%', height: 'auto', display: 'block', margin: 'auto' }} />
 
