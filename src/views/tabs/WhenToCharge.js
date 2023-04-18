@@ -15,20 +15,11 @@ import {
 import forecasts from "../../data/forecast.json"
 
 // react date slider 
-import Slider, { createSliderWithTooltip } from "rc-slider";
-// import Slider from "rc-slider";
+import Slider from "rc-slider";
 import 'rc-slider/assets/index.css';
 import 'rc-tooltip/assets/bootstrap.css';
-import Tooltip from 'rc-tooltip';
-import 'rc-slider/assets/index.css';
 
-var moment = require('moment');
-
-// const createSliderWithTooltip = Slider.createSliderWithTooltip;
-// const Range = createSliderWithTooltip(Slider.Range);
-const Range = Slider.Range;
-const Handle = Slider.Handle;
-
+var moment = require('moment-timezone');
 
 export default class WhenToCharge extends React.Component {
     state = {
@@ -101,8 +92,8 @@ export default class WhenToCharge extends React.Component {
             shapes: [
                 {
                     type: 'line',
-                    x0: 0,
-                    x1: 0,
+                    x0: 8,
+                    x1: 8,
                     y0: 0,
                     y1: 1,
                     line: {
@@ -113,8 +104,8 @@ export default class WhenToCharge extends React.Component {
                 },
                 {
                     type: 'line',
-                    x0: 24,
-                    x1: 24,
+                    x0: 32,
+                    x1: 32,
                     y0: 0,
                     y1: 1,
                     line: {
@@ -125,8 +116,8 @@ export default class WhenToCharge extends React.Component {
                 },
                 {
                     type: 'line',
-                    x0: 48,
-                    x1: 48,
+                    x0: 56,
+                    x1: 56,
                     y0: 0,
                     y1: 1,
                     line: {
@@ -137,8 +128,8 @@ export default class WhenToCharge extends React.Component {
                 },
                 {
                     type: 'line',
-                    x0: 72,
-                    x1: 72,
+                    x0: 80,
+                    x1: 80,
                     y0: 0,
                     y1: 1,
                     line: {
@@ -150,25 +141,25 @@ export default class WhenToCharge extends React.Component {
             ],
             annotations: [
                 {
-                    x: 5,
+                    x: 13,
                     y: 0.9,
                     text: 'January 1',
                     showarrow: false
                 },
                 {
-                    x: 29,
+                    x: 37,
                     y: 0.9,
                     text: 'January 2',
                     showarrow: false
                 },
                 {
-                    x: 53,
+                    x: 61,
                     y: 0.9,
                     text: 'January 3',
                     showarrow: false
                 },
                 {
-                    x: 77,
+                    x: 85,
                     y: 0.9,
                     text: 'January 4',
                     showarrow: false
@@ -210,10 +201,15 @@ export default class WhenToCharge extends React.Component {
     addHours(timestamp, edges) {
         const hour = new Date(timestamp).getHours(); // get the hour from the timestamp
         const newTimes = edges.map(num => {
+            // const date = new Date(timestamp);
+            // date.setHours(hour + num);
+            // const hours = date.getHours();
+            // const ampm = hours >= 12 ? 'pm' : 'am';
+            // const formattedHours = hours % 12 || 12;
+            // return `${formattedHours} ${ampm}`;
             const date = new Date(timestamp);
-
-            date.setHours(hour + num);
-            const hours = date.getHours();
+            const dateStrPT = date.toLocaleTimeString('en-US', {hour12: false, timeZone: 'America/Los_Angeles' });
+            const hours = (Number(dateStrPT.substring(0,2)) + num) % 24;
             const ampm = hours >= 12 ? 'pm' : 'am';
             const formattedHours = hours % 12 || 12;
             return `${formattedHours} ${ampm}`;
@@ -322,6 +318,33 @@ export default class WhenToCharge extends React.Component {
         const q4_avg = this.getAverage(Q4_val)
         this.state.percentage = parseFloat(100 * (q4_avg - q1_avg) / q4_avg).toFixed(2);
 
+        // update day markers 
+        if (this.datetime > new Date(2022,2,13) & this.datetime < new Date(2022,10,6) ) {
+            layout.shapes[0].x0 = 7;
+            layout.shapes[0].x1 = 7;
+            layout.shapes[1].x0 = 31;
+            layout.shapes[1].x1 = 31;
+            layout.shapes[2].x0 = 55;
+            layout.shapes[2].x1 = 55;
+            layout.shapes[3].x0 = 79;
+            layout.shapes[3].x1 = 79;
+        } else {
+            layout.shapes[0].x0 = 8;
+            layout.shapes[0].x1 = 8;
+            layout.shapes[1].x0 = 32;
+            layout.shapes[1].x1 = 32;
+            layout.shapes[2].x0 = 56;
+            layout.shapes[2].x1 = 56;
+            layout.shapes[3].x0 = 80;
+            layout.shapes[3].x1 = 80;
+        }
+
+        // output times for date picker/slider/graph
+        // console.log("Timestamps:")
+        // console.log(this.state.value); //slider 
+        // console.log(document.getElementById("dateInput").value); //date picker
+        // console.log(this.datetime) //graph timestamp
+
         //update state
         this.setState({ revision: this.state.revision + 1 });
         layout.datarevision = this.state.revision + 1;
@@ -409,7 +432,7 @@ export default class WhenToCharge extends React.Component {
                                     trackStyle={{ backgroundColor: '#4E8538' }}
                                     handleStyle={{ borderColor: '#4E8538' }}
                                 >
-                                    <Slider.Handle value={this.state.value.getTime()} style={{ borderColor: '#4caf50' }} />
+                                    {/* <Slider.Handle value={this.state.value.getTime()} style={{ borderColor: '#4caf50' }} /> */}
                                 </Slider>
                             </Col>
                         </Row>
