@@ -19,8 +19,6 @@ import Slider from "rc-slider";
 import 'rc-slider/assets/index.css';
 import 'rc-tooltip/assets/bootstrap.css';
 
-var moment = require('moment-timezone');
-
 export default class WhenToCharge extends React.Component {
     state = {
         line: {
