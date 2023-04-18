@@ -129,19 +129,19 @@ export default function Methodology() {
                         produced and consumed across the grid. As mentioned above, to make the most accurate forecast, the model used these known values from
                         the past (past covariates) and projections about what those generation figures might be in the future (future covariates). These future
                         covariates are intermediate forecasts that improve accuracy but also introduce design complications. As a result, we created a composite
-                        96-hour forecast consisting of a regular 96-hour forecast that excluded energy forecasts as future covariates and a 24-hour forecast that
+                        96 hour forecast consisting of a regular 96 hour forecast that excluded energy forecasts as future covariates and a 24 hour forecast that
                         included energy forecasts as future covariates. This 24 + 96 structure proved effective and enabled us to avoid time-leakage problems
                         while working within the constraints of our model architecture. See Model Construction below for implementation details. </p>
 
                     <h3>Model construction</h3>
-                    <h5>Step 1: 24 Hour Forecasts</h5>
+                    <h4><b>Step 1:</b> 24 Hour Forecasts</h4>
                     <p>We first generate 24 hours of predictions every 24 hours and include future covariates like the net generation forecast of natural gas
                         or solar energy production. The net generation forecasts for natural gas and solar are possible because a 24 hour forecast made every 24 hours
                         does not create duplicate values for each timestamp.</p>
-                    <h5>Step 2: 96 Hour Forecasts</h5>
+                    <h4><b>Step 2:</b> 96 Hour Forecasts</h4>
                     <p>For the 96 hour forecasts, we cannot include the net generation forecasts as future covariates. This is because 96 hour predictions created
                         every 24 hours produces duplicate forecasts for each timestamp.</p>
-                    <h5>Step 3: 24 + 96 Hour Forecasts</h5>
+                    <h4><b>Step 3:</b> 24 + 96 Hour Forecasts</h4>
                     <p>To create the best set of model predictions, we use the 24 hour forecasts that include the net generation forecasts as future covariates to
                         overwrite the first 24 hours of predictions from the 96 hour forecasts. </p>
                     <img src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Diagrams/expanding_window_training_diagram.png"
