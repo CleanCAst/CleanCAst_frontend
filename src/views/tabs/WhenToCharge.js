@@ -448,7 +448,9 @@ export default class WhenToCharge extends React.Component {
                             reduce your carbon footprint by an average of</i>
                         <br />
                         <p className='charge-percentage'>{this.state.percentage}%</p>
-                        <i>Note: all predictions are based on 2022 data for California only. See FAQs for further details.</i>
+                        <i>Note: all predictions are based on 2022 data for California only. See FAQs for further details.
+                            <br/> All times show in Pacific Time.
+                        </i>
                     </div>
                 </Container>
             </div>);
