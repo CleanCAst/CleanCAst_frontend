@@ -25,12 +25,12 @@
     }
     .nav-item .nav-link{
       position: relative;
-      color: $darkgreen;
+      color: inherit;
       line-height: 20px;
       text-align: center;
       display: inline-flex;
       &:hover{
-        color: $gray-500;
+        color: $gray-200;
       }
     }
   }
@@ -60,6 +60,13 @@
   &.navbar-transparent{
     background: $transparent-bg !important;
     padding-top: 25px;
+    .nav-item .nav-link{
+      color: $darkgreen;
+      &:hover{
+        color: $gray-600;
+      }
+    }
+    
   }
 
   &.bg-white{
