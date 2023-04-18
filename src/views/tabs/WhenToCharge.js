@@ -149,25 +149,25 @@ export default class WhenToCharge extends React.Component {
             ],
             annotations: [
                 {
-                    x: 4,
+                    x: 5,
                     y: 0.9,
                     text: 'January 1',
                     showarrow: false
                 },
                 {
-                    x: 28,
+                    x: 29,
                     y: 0.9,
                     text: 'January 2',
                     showarrow: false
                 },
                 {
-                    x: 52,
+                    x: 53,
                     y: 0.9,
                     text: 'January 3',
                     showarrow: false
                 },
                 {
-                    x: 76,
+                    x: 77,
                     y: 0.9,
                     text: 'January 4',
                     showarrow: false
@@ -354,7 +354,7 @@ export default class WhenToCharge extends React.Component {
     };
 
     formatDateLabel = (date) => {
-        return (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear(); // format as MM-DD-YYYY
+        return this.months[date.getMonth()] + ' ' + date.getDate();// + '/' + date.getFullYear(); // format as MM-DD-YYYY
     };
 
     // ---------- HTML ---------- 
