@@ -42,13 +42,10 @@ export default function WhatIsCI() {
                                 When it is sunny and windy, your electricity is relatively green, but other times, fossil fuels dominate and they emit
                                 a lot of CO<sub>2</sub>.  </p>
                             <iframe width="1200" height="720" frameBorder="0" src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Vizzes/website_slider_viz.html"></iframe>
-                            <p><i>The ”actual" values (dark green line) are the carbon intensity reported by the U.S. Energy Information Administration (EIA)
-                                from metered energy consumption. Our carbon intensity predictions are the "Forecast" values (light green line). The
+                            <p><i>The ”actual" values (black line) are the carbon intensity reported by the U.S. Energy Information Administration (EIA)
+                                from metered energy consumption. Our carbon intensity predictions are the "Forecast" values (green line). The
                                 predictions are made every 24 hours for the next 96 hours.</i></p>
 
-                            <p>Looking for some 2022 forecasts to explore? Start here:</p>
-                            <img src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Diagrams/best_worst_errors.png"
-                                style={{ width: '80%', height: 'auto' }} />
                             <h3>Why Carbon Intensity Matters</h3>
                             <p>California has recently launched significant initiatives to put more EVs on the road and phase out natural gas
                                 heaters and stoves. However, unlike fossil fuels, which emit the same amount of CO<sub>2</sub> whenever you burn them, the
