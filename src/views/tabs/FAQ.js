@@ -78,9 +78,20 @@ export default function FAQ() {
                     <p>
                         The average carbon intensity over the forecast window for the highest quartile is compared to the average for the lowest quartile.
                     </p>
-                    <br/>
-                    <p style={{textAlign: 'center'}}>
+                    <br />
+                    <p style={{ textAlign: 'center' }}>
                         Percentage Footprint Reduction = 100* (Highest Quartile - Lowest Quartile) / Highest Quartile
+                    </p>
+
+                    <h4>6.&ensp; Why did you choose LightGBM for modeling?</h4>
+                    <p>
+                        LightGBM, a gradient boosted decision tree model and younger cousin of the widely adopted XGBoost, compares favorably to the performance of many other top models in a
+                        variety of contexts. However, even though LightGBM was at the top or near the top performance-wise, what really set it apart was its speed–we could train 100 models on
+                        LightGBM in the time it took to train one model on a Temporal Fusion Transformer. Given that our statistical baseline model had around a 15% Average MAPE, and we were
+                        close to 10% with more advanced models out of the box, it became clear that further meaningful improvements would require a commitment to feature selection, feature
+                        engineering, hyperparameter tuning, and other creative ideas like creating composite forecasts. These take time to explore. If we had more rows of data, it was possible
+                        that other models could have slightly outperformed LightGBM in the long run, but given the short time frame of the project, we would not have been able to pursue these
+                        other avenues in greater depth.
                     </p>
                     <br /><br /><br /><br />
 
