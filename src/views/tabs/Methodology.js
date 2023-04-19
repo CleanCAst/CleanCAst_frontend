@@ -69,7 +69,7 @@ export default function Methodology() {
                             <img src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Vizzes/data_sources_solar_radiation_graph_image.png"
                                 style={{ width: '60%', height: 'auto', display: 'block', margin: 'auto' }} /> */}
                             <br />
-                            <div style={{textAlign: 'center'}}>
+                            <div style={{ textAlign: 'center' }}>
                                 <img src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Vizzes/data_sources_suns_rays_and_latitude_image.png"
                                     style={{ width: '30%', height: 'auto', display: 'inline-block', margin: 'auto' }} />
                                 <img src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Vizzes/data_sources_solar_radiation_graph_image.png"
@@ -152,9 +152,9 @@ export default function Methodology() {
                     <img src="https://ucb-mids-capstone.s3.us-west-2.amazonaws.com/Diagrams/mape_img.png"
                         style={{ width: '50%', height: 'auto', display: 'block', margin: 'auto' }} />
                     <p>In more practical terms, MAPE represents the difference between the dotted line of the forecasted carbon intensity relative to the
-                        solid line of the actual carbon intensity. Since there are 365 days in our test set in 2022, we have 365 MAPE scores that we combine
-                        to create our performance metric of average MAPE.</p>
-
+                        solid line of the actual carbon intensity. Since there are 365 days in our test set in 2022, we have 365 MAPE scores (depicted in
+                        the Model Construction image above as MAPE<sub>1</sub>, MAPE<sub>2</sub>, MAPE<sub>3</sub>,...MAPE<sub>n</sub>) that we combine
+                        to create our performance metric of average MAPE .</p>
                 </Container>
             </div></>
     );
